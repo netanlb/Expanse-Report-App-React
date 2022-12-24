@@ -1,18 +1,39 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import NavBarComponent from "./navbar/navbar";
 import ExpansesComponent from "./pages/expanses/expanses";
+import StatisticsComponent from "./pages/statistics/statistics";
+
+const tabs = ["expenses", "statistics"];
 
 const router = createBrowserRouter([
+  { path: "/", element: <Navigate to="/expenses"></Navigate> },
   {
-    path: "/",
-    element: <ExpansesComponent></ExpansesComponent>,
+    element: (
+      <div>
+        <NavBarComponent tabs={tabs}></NavBarComponent>
+        <ExpansesComponent></ExpansesComponent>
+      </div>
+    ),
+    path: "/expenses",
+  },
+  {
+    element: (
+      <div>
+        <NavBarComponent tabs={tabs}></NavBarComponent>
+        <StatisticsComponent></StatisticsComponent>
+      </div>
+    ),
+    path: "/statistics",
   },
 ]);
 
 function App() {
   return (
-    <div class="main">
-      <NavBarComponent></NavBarComponent>
+    <div className="main">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

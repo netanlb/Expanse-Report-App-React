@@ -1,49 +1,38 @@
-import { Button, Toolbar, Typography } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import { Box, Container } from "@mui/system";
+import { Toolbar } from "@mui/material";
+import { Container } from "@mui/system";
+import { useLocation } from "react-router-dom";
+import {
+  StyledAppBar,
+  LogoTypography,
+  StyledTab,
+  StyledTabs,
+} from "./navbar.styled";
 
-const pages = ["EXPANSES", "STATISTICS"];
+export default function NavBarComponent({ tabs }) {
+  const locationName = useLocation().pathname.substring(1);
 
-export default function NavBarComponent() {
   return (
-    <AppBar
-      position="sticky"
-      className="navbar"
-      sx={{
-        backgroundColor: "#2D0060",
-      }}
-    >
+    <StyledAppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+          <LogoTypography>LOGO</LogoTypography>
+          <StyledTabs
+            TabIndicatorProps={{
+              style: { background: "white" },
             }}
+            value={locationName}
           >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+            {tabs.map((tab) => (
+              <StyledTab
+                value={tab}
+                label={tab}
+                key={tab}
+                href={"/" + tab}
+              ></StyledTab>
             ))}
-          </Box>
+          </StyledTabs>
         </Toolbar>
       </Container>
-    </AppBar>
+    </StyledAppBar>
   );
 }
