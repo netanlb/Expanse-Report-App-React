@@ -17,6 +17,9 @@ export const StyledTab = styled(Tab)(({ theme }) => ({
   "&.Mui-selected": {
     color: "white",
   },
+  "&:hover": {
+    background: "var(--purple-hover)",
+  },
 }));
 
 export const StyledAppBar = styled(AppBar)(() => ({
