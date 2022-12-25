@@ -1,5 +1,6 @@
-import { Button, styled } from "@mui/material";
-import { Container, Box } from "@mui/system";
+import { Button, Select, styled, FormControl } from "@mui/material";
+import { Container, Box, Stack } from "@mui/system";
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
 export const ToolbarContainer = styled(Container)(() => ({
   display: "flex",
@@ -15,8 +16,8 @@ export const FilterBox = styled(Box)(() => ({
   paddingRight: 10,
   backgroundColor: "white",
   width: "calc(50% - (24px * 2))",
-  height: "50%",
-  borderRadius: 20,
+  height: "70%",
+  borderRadius: 20
 }));
 
 export const AddExpenseButton = styled(Button)(() => ({
@@ -26,3 +27,11 @@ export const AddExpenseButton = styled(Button)(() => ({
     background: "var(--purple-hover)",
   },
 }));
+
+export const CustomWidthTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    maxWidth: 500,
+  },
+});
