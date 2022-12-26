@@ -19,7 +19,7 @@ import {
   getFilterOptions,
 } from "../../../../backendService/backend";
 
-const icons = {
+export const icons = {
   Bills: (
     <ReceiptIcon
       sx={{ color: "#1221EE", marginRight: ".5em", fontSize: "2.3em" }}
@@ -55,7 +55,7 @@ const icons = {
       sx={{ color: "#CE8000", marginRight: ".5em", fontSize: "2.3em" }}
     ></SafetyCheckIcon>
   ),
-  Communications: (
+  Communication: (
     <SatelliteAltIcon
       sx={{ color: "#B5CE00", marginRight: ".5em", fontSize: "2.3em" }}
     ></SatelliteAltIcon>

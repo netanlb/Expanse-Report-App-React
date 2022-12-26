@@ -50,13 +50,33 @@ export const RangeInput = styled("input")(() => ({
 }));
 
 export const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
+
+export const datePickerStyle = {
+  width: "40%",
+  marginTop: "10px",
+  marginLeft: "8px",
+};
+
+export const categoryDropDownStyle = {
+  width: "50%",
+  marginTop: "10px",
+  marginLeft: "15px",
+  "& .MuiSelect-outlined": {
+    paddingLeft: "20px"
+  }
+};
+
+export const descriptionStyle = {
+  marginTop: "20px",
+  width:"94%"
+}
