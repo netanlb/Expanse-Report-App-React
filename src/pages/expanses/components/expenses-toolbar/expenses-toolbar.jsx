@@ -121,8 +121,8 @@ export default function ExpenseToolbarComponent() {
             </option>
           ))}
         </select>
-        <RangeContainer disableGutters>
-          <button ref={RangeTooltipRef} onClick={rangeChange}>
+        <RangeContainer ref={RangeTooltipRef} disableGutters>
+          <button onClick={rangeChange}>
             Range
           </button>
           <RangeTooltip

@@ -29,6 +29,8 @@ export const AddExpenseButton = styled(Button)(() => ({
 
 export const RangeContainer = styled(Container)(() => ({
   position: "relative",
+  width: "50px",
+  marginLeft: 0
 }));
 
 export const RangeTooltip = styled(Box)(() => ({
