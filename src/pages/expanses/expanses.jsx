@@ -8,8 +8,6 @@ export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState({});
   const [expenseList, setExpenseList] = useState([]);
 
-  console.log(currentFilters);
-
   const handleApply = (selections) => {
     setCurrentFilters(selections);
   };

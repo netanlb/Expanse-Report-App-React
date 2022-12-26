@@ -38,8 +38,6 @@ import { icons } from '../expenses-list/expenses-list'
 import { getFilterOptions, addExpense } from "../../../../backendService/backend";
 export default function ExpenseToolbarComponent({ handleApply }) {
   const [filterSelections, setFilterSelections] = useState({});
-
-  console.log(filterSelections);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
