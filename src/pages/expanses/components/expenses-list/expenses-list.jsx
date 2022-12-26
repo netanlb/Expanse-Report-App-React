@@ -77,6 +77,14 @@ const icons = {
   ),
 };
 
+function formatDate(date) {
+  const d = new Date(date);
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+  const year = d.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
 export default function ExpenseListComponent({ currentFilters }) {
   return (
     <Box>
@@ -101,7 +109,9 @@ export default function ExpenseListComponent({ currentFilters }) {
               >
                 {item.name}
               </div>
-              <div style={{ fontSize: ".8em", color: "gray" }}>{item.date}</div>
+              <div style={{ fontSize: ".8em", color: "gray" }}>
+                {formatDate(item.date)}
+              </div>
             </div>
           </Box>
           <div
