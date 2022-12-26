@@ -21,6 +21,8 @@ import { getFilterOptions } from "../../../../backendService/backend";
 export default function ExpenseToolbarComponent({ handleApply }) {
   const [filterSelections, setFilterSelections] = useState({});
 
+  console.log(filterSelections);
+
   const dropdowns = {
     Year: getFilterOptions().years,
     Month: getFilterOptions().months,
@@ -63,6 +65,9 @@ export default function ExpenseToolbarComponent({ handleApply }) {
               value={filterSelections[key] ?? key}
               onChange={(e) => handleChange(e.target.value, key)}
             >
+              <MenuItem key="none" value="">
+                None
+              </MenuItem>
               {values.map((value, index) => (
                 <MenuItem key={index} value={value}>
                   {value}
