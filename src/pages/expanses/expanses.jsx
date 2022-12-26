@@ -24,7 +24,7 @@ export default function ExpensesComponent() {
         handleApply={handleApply}
       ></ExpenseToolbarComponent>
       <StyledBox>
-        <ExpenseListComponent></ExpenseListComponent>
+        <ExpenseListComponent currentFilters={currentFilters}></ExpenseListComponent>
         <ExpenseDetailsComponent></ExpenseDetailsComponent>
       </StyledBox>
     </StyledContainer>

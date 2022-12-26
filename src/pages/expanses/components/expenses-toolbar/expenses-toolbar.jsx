@@ -17,35 +17,14 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
-
+import { getFilterOptions } from "../../../../backendService/backend";
 export default function ExpenseToolbarComponent({ handleApply }) {
   const [filterSelections, setFilterSelections] = useState({});
 
   const dropdowns = {
-    year: [2023, 2022, 2021, 2020, 2019, 2018],
-    month: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ],
-    category: [
-      "All",
-      "Food",
-      "Transport",
-      "Clothes",
-      "Health",
-      "Entertainment",
-      "Other",
-    ],
+    Year: getFilterOptions().years,
+    Month: getFilterOptions().months,
+    Category: getFilterOptions().categories,
   };
 
   const handleChange = (value, key) => {
