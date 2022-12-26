@@ -38,7 +38,6 @@ export default function ExpenseToolbarComponent({ handleApply }) {
   };
 
   const clear = () => {
-    console.log("clear");
     setFilterSelections({});
   };
 
@@ -48,6 +47,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
         <FilterListIcon sx={{ mr: "1em" }} />
         {Object.entries(dropdowns).map(([key, values]) => (
           <FormControl
+            key={key}
             variant="standard"
             size="small"
             sx={{
@@ -62,7 +62,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
               {!filterSelections[key] && capitalizeFirstLetter(key)}
             </InputLabel>
             <Select
-              value={filterSelections[key] ?? key}
+              value={filterSelections[key] ?? ""}
               onChange={(e) => handleChange(e.target.value, key)}
             >
               <MenuItem key="none" value="">

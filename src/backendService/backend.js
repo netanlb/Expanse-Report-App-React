@@ -47,6 +47,8 @@ function getFilterOptions() {
     "Food",
     "Transportation",
     "Entertainment",
+    "Groceries",
+    "Restaurants",
     "Other",
   ];
   //Get min and max sum
@@ -68,7 +70,7 @@ function deleteExpense(id) {
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
-function getExpanses(filterObject) {
+function getExpenses(filterObject) {
   let temp = getAllExpenses();
   if (filterObject) {
     if (filterObject.Year) {
@@ -94,4 +96,4 @@ function getExpanses(filterObject) {
   return temp;
 }
 
-module.exports = { getExpanses, addExpense, deleteExpense, getFilterOptions };
+module.exports = { getExpenses, addExpense, deleteExpense, getFilterOptions };

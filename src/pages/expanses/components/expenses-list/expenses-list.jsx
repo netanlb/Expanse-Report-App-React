@@ -1,43 +1,86 @@
 import { Container, Box, Typography } from "@mui/material";
 import { ExpenseItem } from "./expenses-list.styled";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import ChairRoundedIcon from "@mui/icons-material/ChairRounded";
 import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
-import {getExpanses, addExpense, deleteExpense, getFilterOptions} from "../../../../backendService/backend";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
+import SafetyCheckIcon from "@mui/icons-material/SafetyCheck";
+import GasMeterIcon from "@mui/icons-material/GasMeter";
+import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
+import ImageIcon from "@mui/icons-material/Image";
 
+import {
+  getExpenses,
+  addExpense,
+  deleteExpense,
+  getFilterOptions,
+} from "../../../../backendService/backend";
 
 const icons = {
-  Energy: (
-    <ShoppingCartIcon
-      sx={{ color: "green", marginRight: ".5em", fontSize: "2.3em" }}
-    ></ShoppingCartIcon>
+  Bills: (
+    <ReceiptIcon
+      sx={{ color: "#1221EE", marginRight: ".5em", fontSize: "2.3em" }}
+    ></ReceiptIcon>
   ),
   Home: (
     <HomeRoundedIcon
-      sx={{ color: "purple", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{ color: "#7112EE", marginRight: ".5em", fontSize: "2.3em" }}
     ></HomeRoundedIcon>
   ),
-
   Entertainment: (
-    <ChairRoundedIcon
-      sx={{ color: "brown", marginRight: ".5em", fontSize: "2.3em" }}
-    ></ChairRoundedIcon>
+    <TheaterComedyIcon
+      sx={{ color: "#DF12EE", marginRight: ".5em", fontSize: "2.3em" }}
+    ></TheaterComedyIcon>
+  ),
+  Groceries: (
+    <LocalGroceryStoreIcon
+      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+    ></LocalGroceryStoreIcon>
+  ),
+  Restaurants: (
+    <RestaurantRoundedIcon
+      sx={{ color: "#CE1900", marginRight: ".5em", fontSize: "2.3em" }}
+    ></RestaurantRoundedIcon>
   ),
   Food: (
     <FastfoodRoundedIcon
-      sx={{ color: "orange", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{ color: "#CE1900", marginRight: ".5em", fontSize: "2.3em" }}
     ></FastfoodRoundedIcon>
+  ),
+  Insurence: (
+    <SafetyCheckIcon
+      sx={{ color: "#CE8000", marginRight: ".5em", fontSize: "2.3em" }}
+    ></SafetyCheckIcon>
+  ),
+  Communications: (
+    <SatelliteAltIcon
+      sx={{ color: "#B5CE00", marginRight: ".5em", fontSize: "2.3em" }}
+    ></SatelliteAltIcon>
+  ),
+  Transportation: (
+    <DirectionsBusIcon
+      sx={{ color: "#009CCE", marginRight: ".5em", fontSize: "2.3em" }}
+    ></DirectionsBusIcon>
+  ),
+  Energy: (
+    <GasMeterIcon
+      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+    ></GasMeterIcon>
+  ),
+  Other: (
+    <ImageIcon
+      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+    ></ImageIcon>
   ),
 };
 
-
-export default function ExpenseListComponent({currentFilters}) {
+export default function ExpenseListComponent({ currentFilters }) {
   return (
     <Box>
-      {getExpanses(currentFilters).map((item) => (
+      {getExpenses(currentFilters).map((item) => (
         <ExpenseItem>
           <Box
             sx={{
@@ -61,7 +104,15 @@ export default function ExpenseListComponent({currentFilters}) {
               <div style={{ fontSize: ".8em", color: "gray" }}>{item.date}</div>
             </div>
           </Box>
-          <div style={{ fontSize: "1.5em" }}>{item.sum}$</div>
+          <div
+            style={{
+              fontSize: "1.4em",
+              color: "var(--purple-dark)",
+              fontWeight: 500,
+            }}
+          >
+            {item.sum}₪
+          </div>
         </ExpenseItem>
       ))}
     </Box>
