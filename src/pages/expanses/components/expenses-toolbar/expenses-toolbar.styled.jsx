@@ -11,9 +11,12 @@ export const ToolbarContainer = styled(Container)(() => ({
 export const FilterBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
-  // padding: 20,
-  // backgroundColor: "white",
-  // borderRadius: 30,
+  paddingTop: 5,
+  paddingBottom: 5,
+  paddingLeft: 20,
+  paddingRight: 20,
+  backgroundColor: "white",
+  borderRadius: 30,
 }));
 
 export const AddExpenseButton = styled(Button)(() => ({
