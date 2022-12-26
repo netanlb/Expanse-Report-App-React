@@ -2,6 +2,7 @@ import {
   ToolbarContainer,
   FilterBox,
   AddExpenseButton,
+  modalStyle
 } from "./expenses-toolbar.styled";
 import {
   InputLabel,
@@ -13,14 +14,21 @@ import {
   Button,
   IconButton,
 } from "@mui/material";
+import React from "react";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
+import Backdrop from '@mui/material/Backdrop';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Fade from '@mui/material/Fade';
 import { getFilterOptions } from "../../../../backendService/backend";
 export default function ExpenseToolbarComponent({ handleApply }) {
   const [filterSelections, setFilterSelections] = useState({});
-
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const dropdowns = {
     Year: getFilterOptions().years,
     Month: getFilterOptions().months,
@@ -111,7 +119,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
         </Button>
       </FilterBox>
 
-      <AddExpenseButton variant="contained">
+      <AddExpenseButton variant="contained" onClick={handleOpen}>
         <AddIcon></AddIcon>
         <Typography
           sx={{ fontSize: "0.8em", fontWeight: 700, paddingRight: 1 }}
@@ -119,6 +127,28 @@ export default function ExpenseToolbarComponent({ handleApply }) {
           Add Expense
         </Typography>
       </AddExpenseButton>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={open}>
+          <Box sx={modalStyle}>
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+              Add Expense
+            </Typography>
+            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            </Typography>
+          </Box>
+        </Fade>
+      </Modal>
     </ToolbarContainer>
   );
 }
