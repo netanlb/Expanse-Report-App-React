@@ -6,29 +6,22 @@ import {
 import {
   InputLabel,
   MenuItem,
-  NativeSelect,
-  Slider,
   FormControl,
   Typography,
   Select,
+  TextField,
+  Box,
 } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
 
-function valuetext(value) {
-  return `${value}°C`;
-}
-
 export default function ExpenseToolbarComponent() {
-  const [filterSelections, setFilterSelections] = useState({
-    year: "",
-    month: "",
-    category: "",
-  });
+  const [filterSelections, setFilterSelections] = useState({});
 
   console.log(filterSelections);
-  const filterOptions = {
+
+  const dropdowns = {
     year: [2023, 2022, 2021, 2020, 2019, 2018],
     month: [
       "January",
@@ -59,23 +52,23 @@ export default function ExpenseToolbarComponent() {
     setFilterSelections({ ...filterSelections, [key]: value });
   };
 
-  const handleSliderChange = (event, newValue) => {};
-
   return (
     <ToolbarContainer>
       <FilterBox>
         <FilterListIcon />
-        {Object.entries(filterOptions).map(([key, values]) => (
+        {Object.entries(dropdowns).map(([key, values]) => (
           <FormControl
-            variant="standard"
-            sx={{ m: 1, minWidth: 120 }}
-            key={key}
+            size="small"
+            sx={{
+              ml: "1em",
+            }}
           >
             <InputLabel>{key}</InputLabel>
             <Select
-              value={filterSelections[key]}
+              value={filterSelections[key] ?? ""}
               onChange={(e) => handleChange(e.target.value, key)}
               label={key}
+              sx={{ minWidth: "8em" }}
             >
               {values.map((value, index) => (
                 <MenuItem key={index} value={value}>
@@ -85,6 +78,22 @@ export default function ExpenseToolbarComponent() {
             </Select>
           </FormControl>
         ))}
+        <TextField
+          size="small"
+          sx={{ ml: "1em", width: "8em" }}
+          type="number"
+          onChange={(e) => handleChange(e.target.value, "startSum")}
+          value={filterSelections.startSum ?? ""}
+          placeholder="From"
+        ></TextField>
+        <TextField
+          size="small"
+          sx={{ ml: "1em", width: "8em" }}
+          type="number"
+          onChange={(e) => handleChange(e.target.value, "endSum")}
+          value={filterSelections.endSum ?? ""}
+          placeholder="To"
+        ></TextField>
       </FilterBox>
       <AddExpenseButton variant="contained">
         <AddIcon></AddIcon>
@@ -97,14 +106,3 @@ export default function ExpenseToolbarComponent() {
     </ToolbarContainer>
   );
 }
-/*
-
-      <Slider
-  getAriaLabel={() => 'Temperature range'}
-  value={value}
-  onChange={handleSliderChange}
-  valueLabelDisplay="yes"
-  getAriaValueText={valuetext}
-  //marks={[{value: 0, label: '0'}, {value: 100, label: '100'}]}
-/>
-*/
