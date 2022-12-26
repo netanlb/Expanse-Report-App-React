@@ -55,11 +55,11 @@ const expenseItems = [
     description: "Bed for new apartment",
   },
   {
-    name: "Hamurger",
+    name: "Burger",
     amount: 40,
     date: "2021-09-01",
     category: "food",
-    description: "Hamburger at GDB in Tel Aviv",
+    description: "Burger at GDB in Tel Aviv",
   },
   {
     name: "Car Insurance",
@@ -69,11 +69,11 @@ const expenseItems = [
     description: "Car Insurance for the month of September",
   },
   {
-    name: "Food for Cat",
+    name: "Rami Levi",
     amount: 40,
     date: "2021-09-01",
-    category: "home",
-    description: "Food for Cat for the month of September",
+    category: "groceries",
+    description: "Food for the week",
   },
   {
     name: "Food for Dog",

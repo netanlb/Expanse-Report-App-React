@@ -1,71 +1,90 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import NativeSelect from '@mui/material/NativeSelect';
-import Slider from '@mui/material/Slider';
-// import { Icon } from "@mui/material";
 import {
   ToolbarContainer,
   FilterBox,
   AddExpenseButton,
-  CustomWidthTooltip ,
-  Item
 } from "./expenses-toolbar.styled";
+import {
+  InputLabel,
+  MenuItem,
+  NativeSelect,
+  Slider,
+  FormControl,
+  Typography,
+  Select,
+} from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
-import { FormControl, Typography } from "@mui/material";
+import { useState } from "react";
+
 function valuetext(value) {
   return `${value}°C`;
 }
-export default function ExpenseToolbarComponent() {
-  const [value, setValue] = React.useState([20, 37]);
-  const [year, setYear] = React.useState('');
-  const years = [2023, 2022, 2021, 2020, 2019, 2018]
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-  const categories = ["All", "Food", "Transport", "Clothes", "Health", "Entertainment", "Other"]
-  const handleChange = (event) => {
-    setYear(event.target.value); 
 
+export default function ExpenseToolbarComponent() {
+  const [filterSelections, setFilterSelections] = useState({
+    year: "",
+    month: "",
+    category: "",
+  });
+
+  console.log(filterSelections);
+  const filterOptions = {
+    year: [2023, 2022, 2021, 2020, 2019, 2018],
+    month: [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ],
+    category: [
+      "All",
+      "Food",
+      "Transport",
+      "Clothes",
+      "Health",
+      "Entertainment",
+      "Other",
+    ],
   };
-  const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
+
+  const handleChange = (value, key) => {
+    setFilterSelections({ ...filterSelections, [key]: value });
   };
+
+  const handleSliderChange = (event, newValue) => {};
+
   return (
     <ToolbarContainer>
       <FilterBox>
         <FilterListIcon />
-
-      <FormControl size='small' sx={{marginLeft: "20px"}}>
-        <InputLabel variant="standard" sx={{fontSize:"12px"}}>
-          Year
-        </InputLabel>
-        <NativeSelect sx={{fontSize:"14px", width:"70px"}}
-        onChange={handleChange}
-          //defaultValue={2022}
-        >
-          {years.map((year) => (<option value={year} key={year}>{year}</option>))}
-        </NativeSelect>
-      </FormControl>
-      <FormControl sx={{marginLeft: "20px"}}>
-      <InputLabel variant="standard">
-          Month
-        </InputLabel>
-        <NativeSelect
-          //defaultValue={"January"}
-        >
-          {months.map((month) => (<option value={month} key={month}>{month}</option>))}
-        </NativeSelect>
-      </FormControl>
-      <FormControl sx={{marginLeft: "20px"}}>
-      <InputLabel variant="standard">
-          Category
-        </InputLabel>
-        <NativeSelect
-          //defaultValue={"All"}
-        >
-          {categories.map((category) => (<option value={category} key={category}>{category}</option>))}
-        </NativeSelect>
-      </FormControl>
-
+        {Object.entries(filterOptions).map(([key, values]) => (
+          <FormControl
+            variant="standard"
+            sx={{ m: 1, minWidth: 120 }}
+            key={key}
+          >
+            <InputLabel>{key}</InputLabel>
+            <Select
+              value={filterSelections[key]}
+              onChange={(e) => handleChange(e.target.value, key)}
+              label={key}
+            >
+              {values.map((value, index) => (
+                <MenuItem key={index} value={value}>
+                  {value}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        ))}
       </FilterBox>
       <AddExpenseButton variant="contained">
         <AddIcon></AddIcon>
