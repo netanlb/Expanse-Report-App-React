@@ -10,6 +10,9 @@ export default function ExpensesComponent() {
 
   console.log(currentFilters);
 
+  const handleApply = (selections) => {
+    setCurrentFilters(selections);
+  };
   // useEffect(() => {
   //   const expenses = getExpenses(currentFilters);
   //   setExpenseList(expenses);
@@ -18,7 +21,7 @@ export default function ExpensesComponent() {
   return (
     <StyledContainer disableGutters>
       <ExpenseToolbarComponent
-        applyFilters={setCurrentFilters}
+        handleApply={handleApply}
       ></ExpenseToolbarComponent>
       <StyledBox>
         <ExpenseListComponent></ExpenseListComponent>

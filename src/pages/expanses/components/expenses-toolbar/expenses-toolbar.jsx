@@ -11,15 +11,16 @@ import {
   Select,
   TextField,
   Box,
+  Button,
 } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
 import { useState } from "react";
 
-export default function ExpenseToolbarComponent() {
+export default function ExpenseToolbarComponent({ handleApply }) {
   const [filterSelections, setFilterSelections] = useState({});
 
-  console.log(filterSelections);
+  // console.log(filterSelections);
 
   const dropdowns = {
     year: [2023, 2022, 2021, 2020, 2019, 2018],
@@ -88,13 +89,16 @@ export default function ExpenseToolbarComponent() {
         ></TextField>
         <TextField
           size="small"
-          sx={{ ml: "1em", width: "8em" }}
+          sx={{ ml: "1em", mr: "1em", width: "8em" }}
           type="number"
           onChange={(e) => handleChange(e.target.value, "endSum")}
           value={filterSelections.endSum ?? ""}
           placeholder="To"
         ></TextField>
+        <Button>Clear</Button>
+        <Button onClick={() => handleApply(filterSelections)}>Apply</Button>
       </FilterBox>
+
       <AddExpenseButton variant="contained">
         <AddIcon></AddIcon>
         <Typography
