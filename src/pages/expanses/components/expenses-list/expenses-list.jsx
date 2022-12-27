@@ -1,4 +1,4 @@
-import { Container, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { ExpenseItem } from "./expenses-list.styled";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
@@ -11,13 +11,8 @@ import SafetyCheckIcon from "@mui/icons-material/SafetyCheck";
 import GasMeterIcon from "@mui/icons-material/GasMeter";
 import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
-
-import {
-  getExpenses,
-  addExpense,
-  deleteExpense,
-  getFilterOptions,
-} from "../../../../backendService/backend";
+import { useState } from "react";
+import { getExpenses } from "../../../../backendService/backend";
 
 export const icons = {
   Bills: (
@@ -85,11 +80,11 @@ function formatDate(date) {
   return `${day}/${month}/${year}`;
 }
 
-export default function ExpenseListComponent({ currentFilters }) {
+export default function ExpenseListComponent({ getChoosenExpenseFromChild, currentFilters }) {
   return (
     <Box>
       {getExpenses(currentFilters).map((item) => (
-        <ExpenseItem>
+        <ExpenseItem onClick={() => getChoosenExpenseFromChild(item)} key={item.id}>
           <Box
             sx={{
               display: "flex",

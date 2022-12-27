@@ -7,10 +7,14 @@ import { useEffect, useState } from "react";
 export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState({});
   const [expenseList, setExpenseList] = useState([]);
-
+  const [choosenExpense, setChoosenExpense] = useState({});
   const handleApply = (selections) => {
     setCurrentFilters(selections);
   };
+  const getChoosenExpenseFromChild = (expens) => {
+    setChoosenExpense(expens);
+  };
+
   // useEffect(() => {
   //   const expenses = getExpenses(currentFilters);
   //   setExpenseList(expenses);
@@ -22,8 +26,8 @@ export default function ExpensesComponent() {
         handleApply={handleApply}
       ></ExpenseToolbarComponent>
       <StyledBox>
-        <ExpenseListComponent currentFilters={currentFilters}></ExpenseListComponent>
-        <ExpenseDetailsComponent></ExpenseDetailsComponent>
+        <ExpenseListComponent currentFilters={currentFilters} getChoosenExpenseFromChild={getChoosenExpenseFromChild}></ExpenseListComponent>
+        <ExpenseDetailsComponent choosenExpense={choosenExpense}></ExpenseDetailsComponent>
       </StyledBox>
     </StyledContainer>
   );
