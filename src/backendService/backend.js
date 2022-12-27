@@ -83,7 +83,6 @@ function getExpenses(filterObject) {
       Month : months[new Date().getMonth()]
     }
   }
-  console.log(filterObject)
   let temp = getAllExpenses();
   if (filterObject) {
     if (filterObject.Year || blankFilter) {
