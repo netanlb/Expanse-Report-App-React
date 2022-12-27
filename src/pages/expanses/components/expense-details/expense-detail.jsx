@@ -15,6 +15,7 @@ export default function ExpenseDetailsComponent({ getChoosenExpenseFromChild ,cu
   if (JSON.stringify(choosenExpense) !== "{}") {
     return (
       <Container sx={{ background: "var(--off-white-darker)" }}>
+        <button onClick={() => {getChoosenExpenseFromChild({})}}>Back</button>
         <h1>Expense Details</h1>
         <h1>{choosenExpense.name}</h1>
         <h2>{choosenExpense.category}</h2>
