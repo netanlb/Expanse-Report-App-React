@@ -22,7 +22,7 @@ const months = [
 
 //save in local storage
 localStorage.setItem("expenses", JSON.stringify(mockData));
-localStorage.setItem("lastId", 6);
+localStorage.setItem("lastId", 1000);
 
 function orderByDate(a, b) {
   return new Date(b.date) - new Date(a.date);
