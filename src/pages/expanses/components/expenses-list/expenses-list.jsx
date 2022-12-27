@@ -13,7 +13,7 @@ import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
 import { useState } from "react";
 import { getExpenses } from "../../../../backendService/backend";
-
+import React from "react";
 export const icons = {
   Bills: (
     <ReceiptIcon
@@ -79,8 +79,16 @@ function formatDate(date) {
   const year = d.getFullYear();
   return `${day}/${month}/${year}`;
 }
+ 
 
 export default function ExpenseListComponent({ getChoosenExpenseFromChild, currentFilters }) {
+  const [updated, setUpdated] = useState(false);
+  React.useEffect(() => {
+    window.addEventListener('updateList', (event) => {
+      console.log("dd")
+      setUpdated(!updated);
+    });
+  }, []);
   return (
     <Box>
       {getExpenses(currentFilters).map((item) => (

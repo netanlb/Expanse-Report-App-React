@@ -72,27 +72,34 @@ function deleteExpense(id) {
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
-function getExpenses(filterObject) {  
-  //If no filter is selected, set default filter to current month and year
-  let blankFilter = false;
-  let lastDate = {};
-  if(JSON.stringify(filterObject) === "{}" || (filterObject.Month === "" && filterObject.Year === "")){
-    blankFilter = true;
-    lastDate = {
-      Year : new Date().getFullYear(),
-      Month : months[new Date().getMonth()]
-    }
-  }
+function getExpenses(filterObject) {
   let temp = getAllExpenses();
   if (filterObject) {
+    //If no filter is selected, set default filter to current month and year
+    let blankFilter = false;
+    let lastDate = {};
+    if (
+      JSON.stringify(filterObject) === "{}" ||
+      (filterObject.Month === "" && filterObject.Year === "")
+    ) {
+      blankFilter = true;
+      lastDate = {
+        Year: new Date().getFullYear(),
+        Month: months[new Date().getMonth()],
+      };
+    }
     if (filterObject.Year || blankFilter) {
       temp = temp.filter(
-        (item) => new Date(item.date).getFullYear() === (blankFilter ? lastDate.Year : filterObject.Year)
+        (item) =>
+          new Date(item.date).getFullYear() ===
+          (blankFilter ? lastDate.Year : filterObject.Year)
       );
     }
     if (filterObject.Month || blankFilter) {
       temp = temp.filter(
-        (item) => months[new Date(item.date).getMonth()] === (blankFilter ? lastDate.Month : filterObject.Month)
+        (item) =>
+          months[new Date(item.date).getMonth()] ===
+          (blankFilter ? lastDate.Month : filterObject.Month)
       );
     }
     if (filterObject.Category) {
