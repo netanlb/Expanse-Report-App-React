@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { ExpenseItem, overflowScroll } from "./expenses-list.styled";
+import { ExpenseItem } from "./expenses-list.styled";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -11,6 +11,7 @@ import SafetyCheckIcon from "@mui/icons-material/SafetyCheck";
 import GasMeterIcon from "@mui/icons-material/GasMeter";
 import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
+import { customScroll } from "../expenses-toolbar/expenses-toolbar.styled";
 
 export const icons = {
   Bills: (
@@ -83,7 +84,7 @@ export default function ExpenseListComponent({
   expenseList,
 }) {
   return (
-    <Box sx={overflowScroll}>
+    <Box sx={customScroll}>
       {expenseList &&
         expenseList.map((item) => (
           <ExpenseItem onClick={() => setChosenExpense(item)} key={item.id}>

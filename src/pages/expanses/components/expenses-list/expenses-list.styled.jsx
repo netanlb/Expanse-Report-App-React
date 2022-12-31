@@ -11,14 +11,3 @@ export const ExpenseItem = styled(Container)(() => ({
     cursor: "pointer",
   },
 }));
-
-export const overflowScroll = {
-  overflowY: "auto",
-  maxHeight: "calc(100vh - 149.23px)",
-  "&::-webkit-scrollbar": {
-    width: "0.4em",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    backgroundColor: "var(--purple-light)",
-  },
-};

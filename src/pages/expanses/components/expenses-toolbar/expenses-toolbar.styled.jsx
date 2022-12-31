@@ -6,6 +6,7 @@ export const ToolbarContainer = styled(Container)(() => ({
   alignItems: "center",
   justifyContent: "space-between",
   borderBottom: "1px solid var(--purple-light)",
+  minHeight: "85px",
 }));
 
 export const FilterBox = styled(Box)(() => ({
@@ -17,6 +18,16 @@ export const FilterBox = styled(Box)(() => ({
   paddingRight: 20,
   backgroundColor: "white",
   borderRadius: 30,
+  "& .MuiInputBase-root": {
+    fontSize: "13px",
+    borderColor: "var(--purple-light)",
+  },
+  "& .MuiFormLabel-root": {
+    fontSize: "13px",
+  },
+  "& .MuiFormLabel-root:active": {
+    color: "var(--purple-light)",
+  },
 }));
 
 export const AddExpenseButton = styled(Button)(() => ({
@@ -48,3 +59,19 @@ export const RangeInput = styled("input")(() => ({
   height: "20px",
   margin: "10px",
 }));
+
+export const customScroll = {
+  overflowY: "auto",
+  maxHeight: "calc(100vh - 149.23px)",
+  "&::-webkit-scrollbar": {
+    width: "0.4em",
+  },
+  "&::-webkit-scrollbar-thumb": {
+    background: "transparent",
+  },
+  ":hover": {
+    "&::-webkit-scrollbar-thumb": {
+      background: "#d3d3d3",
+    },
+  },
+};

@@ -45,11 +45,11 @@ export default function ExpenseToolbarComponent({ handleApply }) {
 
   useEffect(() => {
     //TODO
-    //Get the last filter selections from local storage and set them before applying
+    //Get the last filter selections from local storage and set them here
 
-    // default filters
+    // apply happens when ever state for filterSelections changes
     handleApply(filterSelections);
-  });
+  }, [filterSelections]);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -132,19 +132,6 @@ export default function ExpenseToolbarComponent({ handleApply }) {
           value={filterSelections.endSum ?? ""}
           placeholder="End Sum"
         ></TextField>
-        <Button
-          sx={{
-            fontSize: "11px",
-            fontWeight: 600,
-            borderRadius: 10,
-            mr: "1em",
-          }}
-          color="secondary"
-          variant="contained"
-          onClick={() => handleApply(filterSelections)}
-        >
-          Apply
-        </Button>
         <Tooltip title="clear" arrow>
           <IconButton size="small" sx={{}} onClick={clear}>
             <ClearIcon sx={{ fontSize: "1.2em" }}></ClearIcon>

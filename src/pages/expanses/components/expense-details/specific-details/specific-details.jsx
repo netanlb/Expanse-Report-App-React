@@ -1,4 +1,5 @@
 import { Container } from "@mui/material";
+import { customScroll } from "../../expenses-toolbar/expenses-toolbar.styled";
 
 export default function SpecificExpenseDetails({
   chosenExpense,
@@ -14,7 +15,7 @@ export default function SpecificExpenseDetails({
   }
 
   return (
-    <Container sx={{ background: "var(--off-white-darker)" }}>
+    <Container sx={{ background: "var(--off-white-darker)", ...customScroll }}>
       <button
         onClick={() => {
           setChosenExpense();
