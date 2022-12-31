@@ -11,7 +11,7 @@ import SafetyCheckIcon from "@mui/icons-material/SafetyCheck";
 import GasMeterIcon from "@mui/icons-material/GasMeter";
 import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
-import { customScroll } from "../expenses-toolbar/expenses-toolbar.styled";
+import { customScroll } from "../../expanses.styled";
 
 export const icons = {
   Bills: (

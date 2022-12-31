@@ -4,7 +4,6 @@ import ExpenseListComponent from "./components/expenses-list/expenses-list";
 import ExpenseToolbarComponent from "./components/expenses-toolbar/expenses-toolbar";
 import { useState, useEffect } from "react";
 import { getExpenses, _deleteExpense } from "../../backendService/backend";
-import { customScroll } from "./components/expenses-toolbar/expenses-toolbar.styled";
 
 export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState();
@@ -35,6 +34,7 @@ export default function ExpensesComponent() {
           setChosenExpense={setChosenExpense}
           chosenExpense={chosenExpense}
           deleteExpense={deleteExpense}
+          expenseList={expenseList}
         ></ExpenseDetailsComponent>
       </StyledBox>
     </StyledContainer>

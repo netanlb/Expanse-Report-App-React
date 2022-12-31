@@ -1,12 +1,12 @@
 import React from "react";
 import SpecificExpenseDetails from "./specific-details/specific-details";
 import GeneralDetails from "./general-details/general-details";
-import { customScroll } from "../expenses-toolbar/expenses-toolbar.styled";
 
 export default function ExpenseDetailsComponent({
   setChosenExpense,
   chosenExpense,
   deleteExpense,
+  expenseList,
 }) {
   return chosenExpense ? (
     <SpecificExpenseDetails
@@ -15,6 +15,6 @@ export default function ExpenseDetailsComponent({
       deleteExpense={deleteExpense}
     ></SpecificExpenseDetails>
   ) : (
-    <GeneralDetails></GeneralDetails>
+    <GeneralDetails expenseList={expenseList}></GeneralDetails>
   );
 }

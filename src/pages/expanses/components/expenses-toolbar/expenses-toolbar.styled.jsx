@@ -59,19 +59,3 @@ export const RangeInput = styled("input")(() => ({
   height: "20px",
   margin: "10px",
 }));
-
-export const customScroll = {
-  overflowY: "auto",
-  maxHeight: "calc(100vh - 149.23px)",
-  "&::-webkit-scrollbar": {
-    width: "0.4em",
-  },
-  "&::-webkit-scrollbar-thumb": {
-    background: "transparent",
-  },
-  ":hover": {
-    "&::-webkit-scrollbar-thumb": {
-      background: "#d3d3d3",
-    },
-  },
-};

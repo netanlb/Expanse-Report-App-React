@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { customScroll } from "../../expenses-toolbar/expenses-toolbar.styled";
+import { customScroll } from "../../../expanses.styled";
 
 export default function SpecificExpenseDetails({
   chosenExpense,
