@@ -60,13 +60,13 @@ function getFilterOptions() {
 }
 function addExpense(expenseObject) {
   let temp = getAllExpenses();
-  expenseObject.id = Number(localStorage.getItem("lastId"));
+  expenseObject.id = new Date().getTime();
   temp.push(expenseObject);
   localStorage.setItem("lastId", expenseObject.id);
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
-function deleteExpense(id) {
+function _deleteExpense(id) {
   let temp = getAllExpenses();
   temp = temp.filter((item) => item.id !== id);
   localStorage.setItem("expenses", JSON.stringify(temp));
@@ -74,45 +74,36 @@ function deleteExpense(id) {
 
 function getExpenses(filterObject) {
   let temp = getAllExpenses();
-  if (filterObject) {
-    //If no filter is selected, set default filter to current month and year
-    let blankFilter = false;
-    let lastDate = {};
-    if (
-      JSON.stringify(filterObject) === "{}" ||
-      (filterObject.Month === "" && filterObject.Year === "")
-    ) {
-      blankFilter = true;
-      lastDate = {
-        Year: new Date().getFullYear(),
-        Month: months[new Date().getMonth()],
-      };
-    }
-    if (filterObject.Year || blankFilter) {
-      temp = temp.filter(
-        (item) =>
-          new Date(item.date).getFullYear() ===
-          (blankFilter ? lastDate.Year : filterObject.Year)
-      );
-    }
-    if (filterObject.Month || blankFilter) {
-      temp = temp.filter(
-        (item) =>
-          months[new Date(item.date).getMonth()] ===
-          (blankFilter ? lastDate.Month : filterObject.Month)
-      );
-    }
-    if (filterObject.Category) {
-      temp = temp.filter((item) => item.category === filterObject.Category);
-    }
-    if (filterObject.startSum) {
-      temp = temp.filter((item) => item.sum >= filterObject.startSum);
-    }
-    if (filterObject.endSum) {
-      temp = temp.filter((item) => item.sum <= filterObject.endSum);
-    }
+
+  if (!filterObject) return temp;
+  //If no filter is selected, set default filter to current month and year
+
+  if (filterObject.Year) {
+    temp = temp.filter(
+      (item) => new Date(item.date).getFullYear() === filterObject.Year
+    );
   }
+  if (filterObject.Month) {
+    temp = temp.filter(
+      (item) => months[new Date(item.date).getMonth()] === filterObject.Month
+    );
+  }
+  if (filterObject.Category) {
+    temp = temp.filter((item) => item.category === filterObject.Category);
+  }
+  if (filterObject.startSum) {
+    temp = temp.filter((item) => item.sum >= filterObject.startSum);
+  }
+  if (filterObject.endSum) {
+    temp = temp.filter((item) => item.sum <= filterObject.endSum);
+  }
+
   return temp;
 }
 
-module.exports = { getExpenses, addExpense, deleteExpense, getFilterOptions };
+module.exports = {
+  getExpenses,
+  addExpense,
+  _deleteExpense,
+  getFilterOptions,
+};

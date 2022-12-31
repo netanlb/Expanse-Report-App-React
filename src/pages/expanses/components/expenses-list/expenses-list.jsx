@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { ExpenseItem } from "./expenses-list.styled";
+import { ExpenseItem, overflowScroll } from "./expenses-list.styled";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -11,9 +11,7 @@ import SafetyCheckIcon from "@mui/icons-material/SafetyCheck";
 import GasMeterIcon from "@mui/icons-material/GasMeter";
 import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
-import { useState } from "react";
-import { getExpenses } from "../../../../backendService/backend";
-import React from "react";
+
 export const icons = {
   Bills: (
     <ReceiptIcon
@@ -79,55 +77,51 @@ function formatDate(date) {
   const year = d.getFullYear();
   return `${day}/${month}/${year}`;
 }
- 
 
-export default function ExpenseListComponent({ getChoosenExpenseFromChild, currentFilters }) {
-  const [updated, setUpdated] = useState(false);
-  React.useEffect(() => {
-    window.addEventListener('updateList', (event) => {
-      console.log("dd")
-      setUpdated(!updated);
-    });
-  }, []);
+export default function ExpenseListComponent({
+  setChosenExpense,
+  expenseList,
+}) {
   return (
-    <Box>
-      {getExpenses(currentFilters).map((item) => (
-        <ExpenseItem onClick={() => getChoosenExpenseFromChild(item)} key={item.id}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {icons[item.category]}
-            <div>
-              <div
-                style={{
-                  fontSize: "1.1em",
-                  fontWeight: 600,
-                  color: "var(--purple-light)",
-                }}
-              >
-                {item.name}
+    <Box sx={overflowScroll}>
+      {expenseList &&
+        expenseList.map((item) => (
+          <ExpenseItem onClick={() => setChosenExpense(item)} key={item.id}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {icons[item.category]}
+              <div>
+                <div
+                  style={{
+                    fontSize: "1.1em",
+                    fontWeight: 600,
+                    color: "var(--purple-light)",
+                  }}
+                >
+                  {item.name}
+                </div>
+                <div style={{ fontSize: ".8em", color: "gray" }}>
+                  {formatDate(item.date)}
+                </div>
               </div>
-              <div style={{ fontSize: ".8em", color: "gray" }}>
-                {formatDate(item.date)}
-              </div>
+            </Box>
+            <div
+              style={{
+                fontSize: "1.4em",
+                color: "var(--purple-dark)",
+                fontWeight: 500,
+              }}
+            >
+              {item.sum}₪
             </div>
-          </Box>
-          <div
-            style={{
-              fontSize: "1.4em",
-              color: "var(--purple-dark)",
-              fontWeight: 500,
-            }}
-          >
-            {item.sum}₪
-          </div>
-        </ExpenseItem>
-      ))}
+          </ExpenseItem>
+        ))}
     </Box>
   );
 }

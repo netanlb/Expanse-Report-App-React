@@ -11,8 +11,8 @@ export const ToolbarContainer = styled(Container)(() => ({
 export const FilterBox = styled(Box)(() => ({
   display: "flex",
   alignItems: "center",
-  paddingTop: 5,
-  paddingBottom: 5,
+  paddingTop: 10,
+  paddingBottom: 10,
   paddingLeft: 20,
   paddingRight: 20,
   backgroundColor: "white",
@@ -48,35 +48,3 @@ export const RangeInput = styled("input")(() => ({
   height: "20px",
   margin: "10px",
 }));
-
-export const modalStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
-export const datePickerStyle = {
-  width: "40%",
-  marginTop: "10px",
-  marginLeft: "8px",
-};
-
-export const categoryDropDownStyle = {
-  width: "50%",
-  marginTop: "10px",
-  marginLeft: "15px",
-  "& .MuiSelect-outlined": {
-    paddingLeft: "20px"
-  }
-};
-
-export const descriptionStyle = {
-  marginTop: "20px",
-  width:"94%"
-}
