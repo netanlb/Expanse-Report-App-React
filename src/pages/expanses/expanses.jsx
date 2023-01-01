@@ -31,6 +31,7 @@ export default function ExpensesComponent() {
           setChosenExpense={setChosenExpense}
         ></ExpenseListComponent>
         <ExpenseDetailsComponent
+          currentFilters={currentFilters}
           setChosenExpense={setChosenExpense}
           chosenExpense={chosenExpense}
           deleteExpense={deleteExpense}

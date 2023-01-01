@@ -7,6 +7,7 @@ export default function ExpenseDetailsComponent({
   chosenExpense,
   deleteExpense,
   expenseList,
+  currentFilters,
 }) {
   return chosenExpense ? (
     <SpecificExpenseDetails
@@ -15,6 +16,9 @@ export default function ExpenseDetailsComponent({
       deleteExpense={deleteExpense}
     ></SpecificExpenseDetails>
   ) : (
-    <GeneralDetails expenseList={expenseList}></GeneralDetails>
+    <GeneralDetails
+      currentFilters={currentFilters}
+      expenseList={expenseList}
+    ></GeneralDetails>
   );
 }

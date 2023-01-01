@@ -21,7 +21,16 @@ const months = [
 ];
 
 //save in local storage
-localStorage.setItem("expenses", JSON.stringify(mockData));
+localStorage.setItem(
+  "expenses",
+  JSON.stringify(
+    mockData.map((item) => {
+      item.month = months[new Date(item.date).getMonth()];
+      item.year = new Date(item.date).getFullYear();
+      return item;
+    })
+  )
+);
 localStorage.setItem("lastId", 1000);
 
 function orderByDate(a, b) {

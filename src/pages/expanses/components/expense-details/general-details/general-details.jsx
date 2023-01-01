@@ -1,8 +1,16 @@
-import { Container, Box } from "@mui/material";
+import { Container, Box, Typography } from "@mui/material";
 import { customScroll } from "../../../expanses.styled";
 import { PieChart } from "../../../../../charts/pieChart";
+import Legend from "../../../../../legend/legend";
+import {
+  SPENT_ON_CATEGORY,
+  NUM_OF_EXPENSES,
+  GROUP_BY_YEAR,
+  GROUP_BY_MONTH,
+  GROUP_BY_CATEGORY,
+} from "../../../../../utils/datasetLabels";
 
-export default function GeneralDetails({ expenseList }) {
+export default function GeneralDetails({ expenseList, currentFilters }) {
   const calcTotalItems = () => {
     return expenseList.length;
   };
@@ -17,6 +25,14 @@ export default function GeneralDetails({ expenseList }) {
     return calcItemsSum() / calcTotalItems();
   };
 
+  const areFiltersSelected = !!(
+    currentFilters.Year ||
+    currentFilters.Month ||
+    currentFilters.Category ||
+    currentFilters.startSum ||
+    currentFilters.endSum
+  );
+
   return expenseList ? (
     <Container
       sx={{
@@ -24,8 +40,10 @@ export default function GeneralDetails({ expenseList }) {
         ...customScroll,
         color: "var(--purple-dark)",
       }}
+      disableGutters
     >
-      <Box
+      {areFiltersSelected && <Legend currentFilters={currentFilters}></Legend>}
+      <Typography
         sx={{
           display: "flex",
           alignItems: "center",
@@ -33,12 +51,31 @@ export default function GeneralDetails({ expenseList }) {
           "& .item": { marginRight: "1em" },
         }}
       >
-        <p class="item">Total #: {calcTotalItems()}</p>
+        <p class="item">Expenses: {calcTotalItems()}</p>
         <p class="item">Sum: {calcItemsSum()}</p>
         <p class="item">Average: {calcAvgExpense().toFixed(2)}</p>
-      </Box>
-
-      <PieChart expenseList={expenseList}></PieChart>
+      </Typography>
+      {!currentFilters.Month && (
+        <PieChart
+          expenseList={expenseList}
+          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
+          groupBy={GROUP_BY_MONTH}
+        ></PieChart>
+      )}
+      {!currentFilters.Category && (
+        <PieChart
+          expenseList={expenseList}
+          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
+          groupBy={GROUP_BY_CATEGORY}
+        ></PieChart>
+      )}
+      {!currentFilters.Year && (
+        <PieChart
+          expenseList={expenseList}
+          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
+          groupBy={GROUP_BY_YEAR}
+        ></PieChart>
+      )}
     </Container>
   ) : (
     <Container>No Data to show...</Container>
