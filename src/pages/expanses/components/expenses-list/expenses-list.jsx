@@ -12,61 +12,106 @@ import GasMeterIcon from "@mui/icons-material/GasMeter";
 import SatelliteAltIcon from "@mui/icons-material/SatelliteAlt";
 import ImageIcon from "@mui/icons-material/Image";
 import { customScroll } from "../../expanses.styled";
+import { colorPalette } from "../../../../utils/colorPalette";
 
 export const icons = {
   Bills: (
     <ReceiptIcon
-      sx={{ color: "#1221EE", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Bills"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></ReceiptIcon>
   ),
   Home: (
     <HomeRoundedIcon
-      sx={{ color: "#7112EE", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Home"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></HomeRoundedIcon>
   ),
   Entertainment: (
     <TheaterComedyIcon
-      sx={{ color: "#DF12EE", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Entertainment"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></TheaterComedyIcon>
   ),
   Groceries: (
     <LocalGroceryStoreIcon
-      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Groceries"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></LocalGroceryStoreIcon>
   ),
   Restaurants: (
     <RestaurantRoundedIcon
-      sx={{ color: "#CE1900", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Restaurants"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></RestaurantRoundedIcon>
   ),
   Food: (
     <FastfoodRoundedIcon
-      sx={{ color: "#CE1900", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Food"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></FastfoodRoundedIcon>
   ),
   Insurence: (
     <SafetyCheckIcon
-      sx={{ color: "#CE8000", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Insurence"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></SafetyCheckIcon>
   ),
   Communication: (
     <SatelliteAltIcon
-      sx={{ color: "#B5CE00", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Communication"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></SatelliteAltIcon>
   ),
   Transportation: (
     <DirectionsBusIcon
-      sx={{ color: "#009CCE", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Transportation"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></DirectionsBusIcon>
   ),
   Energy: (
     <GasMeterIcon
-      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Energy"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></GasMeterIcon>
   ),
   Other: (
     <ImageIcon
-      sx={{ color: "#EE128F", marginRight: ".5em", fontSize: "2.3em" }}
+      sx={{
+        color: colorPalette["Other"],
+        marginRight: ".5em",
+        fontSize: "2.3em",
+      }}
     ></ImageIcon>
   ),
 };

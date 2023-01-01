@@ -5,15 +5,13 @@ import { colorPalette } from "../utils/colorPalette";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export function PieChart({ expenseList }) {
-  console.log(expenseList);
-
   const createData = () => {
     if (!expenseList) return;
     const data = {
       labels: [],
       datasets: [
         {
-          label: "# of Expenses",
+          label: "Sum of Expenses",
           data: [],
           backgroundColor: [],
           borderColor: [],
@@ -28,12 +26,12 @@ export function PieChart({ expenseList }) {
 
       if (categoryExists) {
         const index = data.labels.indexOf(category);
-        data.datasets[0].data[index]++;
+        data.datasets[0].data[index] += item.sum;
       } else {
         data.labels.push(category);
-        data.datasets[0].data.push(1);
+        data.datasets[0].data.push(item.sum);
         data.datasets[0].backgroundColor.push(colorPalette[category]);
-        data.datasets[0].borderColor.push("#D3D3D3");
+        data.datasets[0].borderColor.push("transparent");
       }
     });
 
