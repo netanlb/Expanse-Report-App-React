@@ -8,13 +8,14 @@ import {
 } from "chart.js";
 import { colorPalette } from "../../utils/colorPalette";
 import { SPENT_ON_CATEGORY, NUM_OF_EXPENSES } from "../../utils/datasetLabels";
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export function PieChart({ expenseList, datasetLabels, groupBy, showLabels }) {
   const createData = (datasetLabels, groupBy, showLabels) => {
     if (!(expenseList || datasetLabels || groupBy)) return;
+
     const data = {
       labels: [],
       datasets: datasetLabels.map((label) => ({
@@ -59,15 +60,22 @@ export function PieChart({ expenseList, datasetLabels, groupBy, showLabels }) {
       }
     });
 
-    if (!showLabels) data.labels = [];
-
     return data;
+  };
+
+  const options = {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
   };
 
   return (
     expenseList && (
       <Box sx={{ marginBottom: "3em" }}>
         <PolarArea
+          options={options}
           data={createData(datasetLabels, groupBy, showLabels)}
         ></PolarArea>
       </Box>

@@ -12,7 +12,6 @@ import {
 import { customScroll } from "../../../expanses.styled";
 import { icons } from "../../expenses-list/expenses-list";
 import { Button } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
 import CancelIcon from "@mui/icons-material/Cancel";
 import EventIcon from "@mui/icons-material/Event";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -45,7 +44,7 @@ export default function SpecificExpenseDetails({
       </ExpenseHeader>
       <Container
         sx={{
-          background: "var(--off-white-darker)",
+          background: "white",
           textAlign: "center",
           ...customScroll,
           height: "100%",
@@ -94,7 +93,3 @@ export default function SpecificExpenseDetails({
     </div>
   );
 }
-
-/*
-      
-*/

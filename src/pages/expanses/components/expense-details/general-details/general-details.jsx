@@ -37,7 +37,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
   return expenseList ? (
     <Container
       sx={{
-        background: "var(--off-white-darker)",
+        background: "white",
         ...customScroll,
         color: "var(--purple-dark)",
         "& .chartRow": {
