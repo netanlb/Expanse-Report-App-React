@@ -27,6 +27,7 @@ export default function ExpensesComponent() {
       ></ExpenseToolbarComponent>
       <StyledBox>
         <ExpenseListComponent
+          chosenExpense={chosenExpense}
           expenseList={expenseList}
           setChosenExpense={setChosenExpense}
         ></ExpenseListComponent>

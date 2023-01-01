@@ -127,12 +127,18 @@ function formatDate(date) {
 export default function ExpenseListComponent({
   setChosenExpense,
   expenseList,
+  chosenExpense,
 }) {
   return (
     <Box sx={customScroll}>
       {expenseList &&
         expenseList.map((item) => (
-          <ExpenseItem onClick={() => setChosenExpense(item)} key={item.id}>
+          <ExpenseItem
+            onClick={() =>
+              setChosenExpense(chosenExpense?.id === item.id ? "" : item)
+            }
+            className={chosenExpense?.id == item.id ? "highlight" : ""}
+          >
             <Box
               sx={{
                 display: "flex",

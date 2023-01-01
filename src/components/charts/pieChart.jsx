@@ -1,7 +1,7 @@
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { colorPalette } from "../utils/colorPalette";
-import { SPENT_ON_CATEGORY, NUM_OF_EXPENSES } from "../utils/datasetLabels";
+import { colorPalette } from "../../utils/colorPalette";
+import { SPENT_ON_CATEGORY, NUM_OF_EXPENSES } from "../../utils/datasetLabels";
 import { Typography, Box } from "@mui/material";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -59,7 +59,7 @@ export function PieChart({ expenseList, datasetLabels, groupBy }) {
   return (
     expenseList && (
       <Box sx={{ marginBottom: "3em" }}>
-        <Typography variant="h6" sx={{ fontWeight: 600, textAlign: "center" }}>
+        <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
           EXPENSES BY {groupBy.toUpperCase()}
         </Typography>
         <Pie data={createData(datasetLabels, groupBy)}></Pie>

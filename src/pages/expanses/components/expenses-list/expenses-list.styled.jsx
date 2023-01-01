@@ -7,7 +7,13 @@ export const ExpenseItem = styled(Container)(() => ({
   alignItems: "center",
   justifyContent: "space-between",
   "&:hover": {
-    background: "var(--off-white-darker)",
+    background: "var(--purple-light-opacity-20)",
     cursor: "pointer",
+  },
+  "&.highlight": {
+    background: "var(--purple-light-opacity-20)",
+  },
+  "&:active": {
+    background: "var(--purple-light-opacity-10)",
   },
 }));

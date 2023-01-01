@@ -1,7 +1,7 @@
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { customScroll } from "../../../expanses.styled";
-import { PieChart } from "../../../../../charts/pieChart";
-import Legend from "../../../../../legend/legend";
+import { PieChart } from "../../../../../components/charts/pieChart";
+import Legend from "../../../../../components/legend/legend";
 import {
   SPENT_ON_CATEGORY,
   NUM_OF_EXPENSES,
