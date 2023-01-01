@@ -22,15 +22,15 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
   };
 
   const calcAvgExpense = () => {
-    return calcItemsSum() / calcTotalItems();
+    return (calcItemsSum() / calcTotalItems()).toFixed(0);
   };
 
   const areFiltersSelected = !!(
-    currentFilters.Year ||
-    currentFilters.Month ||
-    currentFilters.Category ||
-    currentFilters.startSum ||
-    currentFilters.endSum
+    currentFilters?.Year ||
+    currentFilters?.Month ||
+    currentFilters?.Category ||
+    currentFilters?.startSum ||
+    currentFilters?.endSum
   );
 
   return expenseList ? (
@@ -51,25 +51,25 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
           "& .item": { marginRight: "1em" },
         }}
       >
-        <p class="item">Expenses: {calcTotalItems()}</p>
-        <p class="item">Sum: {calcItemsSum()}</p>
-        <p class="item">Average: {calcAvgExpense().toFixed(2)}</p>
+        <p class="item">Expenses: {calcTotalItems().toLocaleString()}</p>
+        <p class="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
+        <p class="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
       </Typography>
-      {!currentFilters.Month && (
+      {!currentFilters?.Month && (
         <PieChart
           expenseList={expenseList}
           datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
           groupBy={GROUP_BY_MONTH}
         ></PieChart>
       )}
-      {!currentFilters.Category && (
+      {!currentFilters?.Category && (
         <PieChart
           expenseList={expenseList}
           datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
           groupBy={GROUP_BY_CATEGORY}
         ></PieChart>
       )}
-      {!currentFilters.Year && (
+      {!currentFilters?.Year && (
         <PieChart
           expenseList={expenseList}
           datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
