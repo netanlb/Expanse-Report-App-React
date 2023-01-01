@@ -138,6 +138,7 @@ export default function ExpenseListComponent({
               setChosenExpense(chosenExpense?.id === item.id ? "" : item)
             }
             className={chosenExpense?.id == item.id ? "highlight" : ""}
+            key={item.id}
           >
             <Box
               sx={{

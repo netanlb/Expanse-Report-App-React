@@ -1,13 +1,19 @@
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { PolarArea } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 import { colorPalette } from "../../utils/colorPalette";
 import { SPENT_ON_CATEGORY, NUM_OF_EXPENSES } from "../../utils/datasetLabels";
 import { Typography, Box } from "@mui/material";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
-export function PieChart({ expenseList, datasetLabels, groupBy }) {
-  const createData = (datasetLabels, groupBy) => {
+export function PieChart({ expenseList, datasetLabels, groupBy, showLabels }) {
+  const createData = (datasetLabels, groupBy, showLabels) => {
     if (!(expenseList || datasetLabels || groupBy)) return;
     const data = {
       labels: [],
@@ -53,16 +59,17 @@ export function PieChart({ expenseList, datasetLabels, groupBy }) {
       }
     });
 
+    if (!showLabels) data.labels = [];
+
     return data;
   };
 
   return (
     expenseList && (
       <Box sx={{ marginBottom: "3em" }}>
-        <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
-          EXPENSES BY {groupBy.toUpperCase()}
-        </Typography>
-        <Pie data={createData(datasetLabels, groupBy)}></Pie>
+        <PolarArea
+          data={createData(datasetLabels, groupBy, showLabels)}
+        ></PolarArea>
       </Box>
     )
   );

@@ -15,7 +15,7 @@ export default function SpecificExpenseDetails({
   }
 
   return (
-    <Container sx={{ background: "var(--off-white-darker)", ...customScroll }}>
+    <Container sx={customScroll}>
       <button
         onClick={() => {
           setChosenExpense();

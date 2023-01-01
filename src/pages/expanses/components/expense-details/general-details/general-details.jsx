@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { customScroll } from "../../../expanses.styled";
 import { PieChart } from "../../../../../components/charts/pieChart";
 import Legend from "../../../../../components/legend/legend";
@@ -40,6 +40,10 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
         background: "var(--off-white-darker)",
         ...customScroll,
         color: "var(--purple-dark)",
+        "& .chartRow": {
+          display: "flex",
+          justifyContent: "center",
+        },
       }}
       disableGutters
     >
@@ -57,25 +61,67 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
         <p className="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
       </Typography>
       {!currentFilters?.Month && (
-        <PieChart
-          expenseList={expenseList}
-          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
-          groupBy={GROUP_BY_MONTH}
-        ></PieChart>
+        <div>
+          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+            EXPENSES BY MONTH
+          </Typography>
+          <Box className="chartRow">
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[SPENT_ON_CATEGORY]}
+              groupBy={GROUP_BY_MONTH}
+              showLabels={false}
+            ></PieChart>
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[NUM_OF_EXPENSES]}
+              groupBy={GROUP_BY_MONTH}
+              showLabels={false}
+            ></PieChart>
+          </Box>
+        </div>
       )}
       {!currentFilters?.Category && (
-        <PieChart
-          expenseList={expenseList}
-          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
-          groupBy={GROUP_BY_CATEGORY}
-        ></PieChart>
+        <div>
+          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+            EXPENSES BY CATEGORY
+          </Typography>
+          <Box className="chartRow">
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[SPENT_ON_CATEGORY]}
+              groupBy={GROUP_BY_CATEGORY}
+              showLabels={false}
+            ></PieChart>
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[NUM_OF_EXPENSES]}
+              groupBy={GROUP_BY_CATEGORY}
+              showLabels={false}
+            ></PieChart>
+          </Box>
+        </div>
       )}
       {!currentFilters?.Year && (
-        <PieChart
-          expenseList={expenseList}
-          datasetLabels={[SPENT_ON_CATEGORY, NUM_OF_EXPENSES]}
-          groupBy={GROUP_BY_YEAR}
-        ></PieChart>
+        <div>
+          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+            EXPENSES BY YEAR
+          </Typography>
+          <Box className="chartRow">
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[NUM_OF_EXPENSES]}
+              groupBy={GROUP_BY_YEAR}
+              showLabels={false}
+            ></PieChart>
+            <PieChart
+              expenseList={expenseList}
+              datasetLabels={[SPENT_ON_CATEGORY]}
+              groupBy={GROUP_BY_YEAR}
+              showLabels={false}
+            ></PieChart>
+          </Box>
+        </div>
       )}
     </Container>
   ) : (
