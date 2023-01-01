@@ -22,7 +22,8 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
   };
 
   const calcAvgExpense = () => {
-    return (calcItemsSum() / calcTotalItems()).toFixed(0);
+    const avg = calcItemsSum() / calcTotalItems();
+    return avg ? avg.toFixed(0) : 0;
   };
 
   const areFiltersSelected = !!(
@@ -51,9 +52,9 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
           "& .item": { marginRight: "1em" },
         }}
       >
-        <p class="item">Expenses: {calcTotalItems().toLocaleString()}</p>
-        <p class="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
-        <p class="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
+        <p className="item">Expenses: {calcTotalItems().toLocaleString()}</p>
+        <p className="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
+        <p className="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
       </Typography>
       {!currentFilters?.Month && (
         <PieChart
