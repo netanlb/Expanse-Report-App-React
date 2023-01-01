@@ -30,6 +30,7 @@ import dayjs from "dayjs";
 import {
   addExpense,
   getFilterOptions,
+  months
 } from "../../../../backendService/backend";
 
 import { useState } from "react";
@@ -56,7 +57,7 @@ export default function AddExpenseModalComponent({
 
     console.log(expenseObject);
     addExpense(expenseObject);
-    handleApply({});
+    handleApply({Year: dateValue.year(), Month: months[dateValue.month()]});
     closeModal();
   };
 

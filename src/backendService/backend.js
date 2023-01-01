@@ -111,6 +111,7 @@ function getExpenses(filterObject) {
 }
 
 module.exports = {
+  months,
   getExpenses,
   addExpense,
   _deleteExpense,
