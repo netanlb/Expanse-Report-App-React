@@ -3,9 +3,17 @@ import { Container } from "@mui/system";
 
 export default function StatisticsComponent() {
   return (
-    <Container>
+    <Container
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "calc(100vh - 64px)",
+      }}
+    >
+      <img src="./construction.ico" style={{ height: 100 }}></img>
       <Typography
-        variant="h6"
+        variant="h4"
         xs={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         Sorry, this page is still under construction

@@ -30,7 +30,7 @@ export const LogoTypography = styled(Typography)(() => ({
   fontVariant: "h6",
   href: "/",
   display: "flex",
-  marginRight: "10em",
+  marginRight: "2em",
   color: "white",
   fontWeight: 700,
 }));

@@ -1,10 +1,6 @@
 import { styled } from "@mui/material";
 import { Container } from "@mui/system";
 
-export const backIcon = {
-  float: "left",
-};
-
 export const ExpenseHeader = styled(Container)(() => ({
   width: "100%",
   height: "40px",
@@ -12,18 +8,16 @@ export const ExpenseHeader = styled(Container)(() => ({
   alignItems: "center",
   backgroundColor: "var(--purple-dark)",
   opacity: 0.5,
-  margin: 0,
   textAlign: "center",
   span: {
+    position: "relative",
+    right: 20,
     margin: "0 auto",
     color: "white",
     fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
     fontWeight: 400,
-    fontSize: "1em",
+    fontSize: "1.1em",
     lineHight: 1.5,
-  },
-  IconButton: {
-    color: "white",
   },
 }));
 

@@ -1,4 +1,4 @@
-import { Toolbar } from "@mui/material";
+import { Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import {
@@ -15,7 +15,14 @@ export default function NavBarComponent({ tabs }) {
     <StyledAppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar>
-          <LogoTypography>LOGO</LogoTypography>
+          <LogoTypography>
+            <img
+              src="./chart-646.svg"
+              style={{ color: "white", height: 20 }}
+            ></img>
+            &nbsp;EXPENSES
+          </LogoTypography>
+
           <StyledTabs
             TabIndicatorProps={{
               style: { background: "white" },

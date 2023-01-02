@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, IconButton } from "@mui/material";
 import {
   ExpenseHeader,
   backIcon,
@@ -31,16 +31,15 @@ export default function SpecificExpenseDetails({
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <ExpenseHeader>
-        <iconButton
-          style={backIcon}
+      <ExpenseHeader disableGutters>
+        <IconButton
           onClick={() => {
             setChosenExpense();
           }}
         >
-          <CancelIcon />
-        </iconButton>
-        <span>Expense details</span>
+          <CancelIcon sx={{ color: "white" }} />
+        </IconButton>
+        <span>Expense Details</span>
       </ExpenseHeader>
       <Container
         sx={{

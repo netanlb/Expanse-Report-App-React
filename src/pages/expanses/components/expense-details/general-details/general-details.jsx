@@ -36,97 +36,97 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
 
   const expenseListExists = expenseList?.length;
 
-  return expenseListExists ? (
-    <Container
-      sx={{
-        background: "white",
-        ...customScroll,
-        color: "var(--purple-dark)",
-        "& .chartRow": {
-          display: "flex",
-          justifyContent: "center",
-        },
-      }}
-      disableGutters
-    >
-      {filtersExists && <Legend currentFilters={currentFilters}></Legend>}
-      <Typography
+  return (
+    expenseListExists && (
+      <Container
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          "& .item": { marginRight: "1em" },
+          background: "white",
+          ...customScroll,
+          color: "var(--purple-dark)",
+          "& .chartRow": {
+            display: "flex",
+            justifyContent: "center",
+          },
         }}
+        disableGutters
       >
-        <p className="item">Expenses: {calcTotalItems().toLocaleString()}</p>
-        <p className="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
-        <p className="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
-      </Typography>
-      {!currentFilters?.Month && (
-        <div>
-          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
-            EXPENSES BY MONTH
-          </Typography>
-          <Box className="chartRow">
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[SPENT_ON_CATEGORY]}
-              groupBy={GROUP_BY_MONTH}
-              showLabels={false}
-            ></PieChart>
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[NUM_OF_EXPENSES]}
-              groupBy={GROUP_BY_MONTH}
-              showLabels={false}
-            ></PieChart>
-          </Box>
-        </div>
-      )}
-      {!currentFilters?.Category && (
-        <div>
-          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
-            EXPENSES BY CATEGORY
-          </Typography>
-          <Box className="chartRow">
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[SPENT_ON_CATEGORY]}
-              groupBy={GROUP_BY_CATEGORY}
-              showLabels={false}
-            ></PieChart>
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[NUM_OF_EXPENSES]}
-              groupBy={GROUP_BY_CATEGORY}
-              showLabels={false}
-            ></PieChart>
-          </Box>
-        </div>
-      )}
-      {!currentFilters?.Year && (
-        <div>
-          <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
-            EXPENSES BY YEAR
-          </Typography>
-          <Box className="chartRow">
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[NUM_OF_EXPENSES]}
-              groupBy={GROUP_BY_YEAR}
-              showLabels={false}
-            ></PieChart>
-            <PieChart
-              expenseList={expenseList}
-              datasetLabels={[SPENT_ON_CATEGORY]}
-              groupBy={GROUP_BY_YEAR}
-              showLabels={false}
-            ></PieChart>
-          </Box>
-        </div>
-      )}
-    </Container>
-  ) : (
-    <Container>No Data to show...</Container>
+        {filtersExists && <Legend currentFilters={currentFilters}></Legend>}
+        <Typography
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            "& .item": { marginRight: "1em" },
+          }}
+        >
+          <p className="item">Expenses: {calcTotalItems().toLocaleString()}</p>
+          <p className="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
+          <p className="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
+        </Typography>
+        {!currentFilters?.Month && (
+          <div>
+            <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+              EXPENSES BY MONTH
+            </Typography>
+            <Box className="chartRow">
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[SPENT_ON_CATEGORY]}
+                groupBy={GROUP_BY_MONTH}
+                showLabels={false}
+              ></PieChart>
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[NUM_OF_EXPENSES]}
+                groupBy={GROUP_BY_MONTH}
+                showLabels={false}
+              ></PieChart>
+            </Box>
+          </div>
+        )}
+        {!currentFilters?.Category && (
+          <div>
+            <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+              EXPENSES BY CATEGORY
+            </Typography>
+            <Box className="chartRow">
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[SPENT_ON_CATEGORY]}
+                groupBy={GROUP_BY_CATEGORY}
+                showLabels={false}
+              ></PieChart>
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[NUM_OF_EXPENSES]}
+                groupBy={GROUP_BY_CATEGORY}
+                showLabels={false}
+              ></PieChart>
+            </Box>
+          </div>
+        )}
+        {!currentFilters?.Year && (
+          <div>
+            <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
+              EXPENSES BY YEAR
+            </Typography>
+            <Box className="chartRow">
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[NUM_OF_EXPENSES]}
+                groupBy={GROUP_BY_YEAR}
+                showLabels={false}
+              ></PieChart>
+              <PieChart
+                expenseList={expenseList}
+                datasetLabels={[SPENT_ON_CATEGORY]}
+                groupBy={GROUP_BY_YEAR}
+                showLabels={false}
+              ></PieChart>
+            </Box>
+          </div>
+        )}
+      </Container>
+    )
   );
 }
