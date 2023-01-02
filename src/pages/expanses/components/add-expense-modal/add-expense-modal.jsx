@@ -6,6 +6,7 @@ import {
 } from "./add-expense-modal.styled";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import DescriptionIcon from "@mui/icons-material/Description";
+import Alert from "@mui/material/Alert";
 
 import {
   Backdrop,
@@ -45,9 +46,14 @@ export default function AddExpenseModalComponent({
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [sum, setSum] = useState("");
-
+  const [clicked, setClicked] = useState(false)
+  const checkValidation = () => {
+    return (!!dateValue && !!name && !!category && !!sum)
+  }
   const handleAddNewExpense = () => {
-    if (!validate) return;
+    setClicked(true)
+    
+    if (!checkValidation()) return;
 
     let expenseObject = {
       name: name,
@@ -72,9 +78,9 @@ export default function AddExpenseModalComponent({
     setDescription("");
     setSum("");
     handleClose();
+    setClicked(false)
   };
-
-  const validate = !!(dateValue, name, category, sum);
+  
 
   return (
     <Modal
@@ -103,7 +109,7 @@ export default function AddExpenseModalComponent({
             label="Bussiness Name"
             id="outlined-start-adornment"
             sx={{ m: 1, width: "50%" }}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {setName(e.target.value); checkValidation()}}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -124,6 +130,7 @@ export default function AddExpenseModalComponent({
               label="Amount"
               onChange={(e) => {
                 setSum(e.target.value);
+              checkValidation()
               }}
             />
           </FormControl>
@@ -132,7 +139,7 @@ export default function AddExpenseModalComponent({
               label="Date"
               inputFormat="DD/MM/YYYY"
               value={dateValue}
-              onChange={(value) => setDateValue(value)}
+              onChange={(value) => {setDateValue(value); checkValidation()}}
               renderInput={(params) => (
                 <TextField
                   style={datePickerStyle}
@@ -150,6 +157,7 @@ export default function AddExpenseModalComponent({
             value={category ?? ""}
             onChange={(e) => {
               setCategory(e.target.value);
+              checkValidation()
             }}
             color="secondary"
           >
@@ -196,12 +204,20 @@ export default function AddExpenseModalComponent({
                 background: "var(--purple-hover)",
               },
             }}
-            onClick={handleAddNewExpense}
+            onClick={()=>{
+              
+              handleAddNewExpense()
+            }}
             variant="contained"
             color="secondary"
           >
             Add Expense
           </Button>
+          {!checkValidation() && clicked && (
+            <Alert sx={{ marginTop: "20px" }} severity="error">
+              Error: You must fill all the fields!
+            </Alert>
+          )}
         </Box>
       </Fade>
     </Modal>
