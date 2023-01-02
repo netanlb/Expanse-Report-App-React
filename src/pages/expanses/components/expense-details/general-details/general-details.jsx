@@ -59,9 +59,13 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
             "& .item": { marginRight: "1em" },
           }}
         >
-          <p className="item">Expenses: {calcTotalItems().toLocaleString()}</p>
-          <p className="item">Sum: {calcItemsSum().toLocaleString()}₪</p>
-          <p className="item">Average: {calcAvgExpense().toLocaleString()}₪</p>
+          <span className="item">
+            Expenses: {calcTotalItems().toLocaleString()}
+          </span>
+          <span className="item">Sum: {calcItemsSum().toLocaleString()}₪</span>
+          <span className="item">
+            Average: {calcAvgExpense().toLocaleString()}₪
+          </span>
         </Typography>
         {!currentFilters?.Month && (
           <div>

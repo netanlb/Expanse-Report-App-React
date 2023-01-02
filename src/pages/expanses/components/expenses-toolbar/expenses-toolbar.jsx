@@ -50,7 +50,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
   useEffect(() => {
     // apply happens when ever state for filterSelections changes
     handleApply(filterSelections);
-  }, [filterSelections]);
+  }, [filterSelections, handleApply]);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);

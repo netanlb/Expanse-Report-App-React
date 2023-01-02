@@ -1,7 +1,6 @@
 import { Container, IconButton } from "@mui/material";
 import {
   ExpenseHeader,
-  backIcon,
   sumText,
   CatDateWrapper,
   MapWrapper,

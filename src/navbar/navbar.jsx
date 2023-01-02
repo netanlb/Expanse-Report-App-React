@@ -1,4 +1,4 @@
-import { Toolbar, Typography } from "@mui/material";
+import { Toolbar } from "@mui/material";
 import { Container } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import {
@@ -19,6 +19,7 @@ export default function NavBarComponent({ tabs }) {
             <img
               src="./chart-646.svg"
               style={{ color: "white", height: 20 }}
+              alt="logo"
             ></img>
             &nbsp;EXPENSES
           </LogoTypography>

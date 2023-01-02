@@ -21,23 +21,29 @@ export default function Legend({ currentFilters }) {
           },
         }}
       >
-        <p className="item">|&nbsp;&nbsp;&nbsp;</p>
+        <span className="item">|&nbsp;&nbsp;&nbsp;</span>
         {currentFilters.Year && (
-          <p className="item">{currentFilters.Year}&nbsp;&nbsp;&nbsp;|</p>
+          <span className="item">{currentFilters.Year}&nbsp;&nbsp;&nbsp;|</span>
         )}
         {currentFilters.Month && (
-          <p className="item">{currentFilters.Month}&nbsp;&nbsp;&nbsp;|</p>
+          <span className="item">
+            {currentFilters.Month}&nbsp;&nbsp;&nbsp;|
+          </span>
         )}
         {currentFilters.Category && (
-          <p className="item">{currentFilters.Category}&nbsp;&nbsp;&nbsp;|</p>
+          <span className="item">
+            {currentFilters.Category}&nbsp;&nbsp;&nbsp;|
+          </span>
         )}
         {currentFilters.startSum && (
-          <p className="item">
+          <span className="item">
             From {currentFilters.startSum}₪&nbsp;&nbsp;&nbsp;|
-          </p>
+          </span>
         )}
         {currentFilters.endSum && (
-          <p className="item">To {currentFilters.endSum}₪&nbsp;&nbsp;&nbsp;|</p>
+          <span className="item">
+            To {currentFilters.endSum}₪&nbsp;&nbsp;&nbsp;|
+          </span>
         )}
       </Typography>
     )

@@ -11,7 +11,11 @@ export default function StatisticsComponent() {
         height: "calc(100vh - 64px)",
       }}
     >
-      <img src="./construction.ico" style={{ height: 100 }}></img>
+      <img
+        src="./construction.ico"
+        style={{ height: 100 }}
+        alt="construction img"
+      ></img>
       <Typography
         variant="h4"
         xs={{ display: "flex", justifyContent: "center", alignItems: "center" }}

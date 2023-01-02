@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export function PieChart({ expenseList, datasetLabels, groupBy, showLabels }) {
-  const createData = (datasetLabels, groupBy, showLabels) => {
+  const createData = (datasetLabels, groupBy) => {
     if (!(expenseList || datasetLabels || groupBy)) return;
 
     const data = {
