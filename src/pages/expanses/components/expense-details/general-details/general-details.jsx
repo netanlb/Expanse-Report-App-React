@@ -26,7 +26,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
     return avg ? avg.toFixed(0) : 0;
   };
 
-  const areFiltersSelected = !!(
+  const filtersExists = !!(
     currentFilters?.Year ||
     currentFilters?.Month ||
     currentFilters?.Category ||
@@ -34,7 +34,9 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
     currentFilters?.endSum
   );
 
-  return expenseList ? (
+  const expenseListExists = expenseList?.length;
+
+  return expenseListExists ? (
     <Container
       sx={{
         background: "white",
@@ -47,7 +49,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
       }}
       disableGutters
     >
-      {areFiltersSelected && <Legend currentFilters={currentFilters}></Legend>}
+      {filtersExists && <Legend currentFilters={currentFilters}></Legend>}
       <Typography
         sx={{
           display: "flex",

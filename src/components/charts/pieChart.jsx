@@ -63,13 +63,15 @@ export function PieChart({ expenseList, datasetLabels, groupBy, showLabels }) {
     return data;
   };
 
-  const options = {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-  };
+  const options = showLabels
+    ? {}
+    : {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+      };
 
   return (
     expenseList && (

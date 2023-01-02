@@ -30,7 +30,7 @@ import dayjs from "dayjs";
 import {
   addExpense,
   getFilterOptions,
-  months
+  months,
 } from "../../../../backendService/backend";
 
 import { useState } from "react";
@@ -38,7 +38,7 @@ import { useState } from "react";
 export default function AddExpenseModalComponent({
   isOpen,
   handleClose,
-  handleApply,
+  setFilterSelections,
 }) {
   const [dateValue, setDateValue] = useState(dayjs(new Date()));
   const [name, setName] = useState("");
@@ -47,17 +47,21 @@ export default function AddExpenseModalComponent({
   const [sum, setSum] = useState("");
 
   const handleAddNewExpense = () => {
+    if (!validate) return;
+
     let expenseObject = {
       name: name,
       category: category,
       description: description,
-      sum: sum,
+      sum: +sum,
       date: dateValue,
     };
 
-    console.log(expenseObject);
+    setFilterSelections({
+      Year: new Date(expenseObject.date).getFullYear(),
+      Month: months[new Date(expenseObject.date).getMonth()],
+    });
     addExpense(expenseObject);
-    handleApply({Year: dateValue.year(), Month: months[dateValue.month()]});
     closeModal();
   };
 
@@ -69,6 +73,8 @@ export default function AddExpenseModalComponent({
     setSum("");
     handleClose();
   };
+
+  const validate = !!(dateValue, name, category, sum);
 
   return (
     <Modal

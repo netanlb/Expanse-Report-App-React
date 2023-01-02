@@ -21,17 +21,9 @@ const months = [
 ];
 
 //save in local storage
-localStorage.setItem(
-  "expenses",
-  JSON.stringify(
-    mockData.map((item) => {
-      item.month = months[new Date(item.date).getMonth()];
-      item.year = new Date(item.date).getFullYear();
-      return item;
-    })
-  )
-);
-localStorage.setItem("lastId", 1000);
+if (!localStorage.getItem("expenses")) {
+  localStorage.setItem("expenses", JSON.stringify(mockData));
+}
 
 function orderByDate(a, b) {
   return new Date(b.date) - new Date(a.date);
@@ -71,7 +63,6 @@ function addExpense(expenseObject) {
   let temp = getAllExpenses();
   expenseObject.id = new Date().getTime();
   temp.push(expenseObject);
-  localStorage.setItem("lastId", expenseObject.id);
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
@@ -81,8 +72,24 @@ function _deleteExpense(id) {
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
+function saveFilterSelections(filters) {
+  localStorage.setItem("filters", JSON.stringify(filters));
+}
+
+function getLastSelectedFilters() {
+  return JSON.parse(localStorage.getItem("filters"));
+}
+
 function getExpenses(filterObject) {
+  saveFilterSelections(filterObject);
+
   let temp = getAllExpenses();
+
+  temp.map((item) => {
+    item.month = months[new Date(item.date).getMonth()];
+    item.year = new Date(item.date).getFullYear();
+    return item;
+  });
 
   if (!filterObject) return temp;
   //If no filter is selected, set default filter to current month and year
@@ -116,4 +123,5 @@ module.exports = {
   addExpense,
   _deleteExpense,
   getFilterOptions,
+  getLastSelectedFilters,
 };

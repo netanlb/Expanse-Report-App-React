@@ -19,7 +19,10 @@ import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState, useEffect } from "react";
 
-import { getFilterOptions } from "../../../../backendService/backend";
+import {
+  getFilterOptions,
+  getLastSelectedFilters,
+} from "../../../../backendService/backend";
 import AddExpenseModalComponent from "../add-expense-modal/add-expense-modal";
 
 const months = [
@@ -38,15 +41,14 @@ const months = [
 ];
 
 export default function ExpenseToolbarComponent({ handleApply }) {
-  const [filterSelections, setFilterSelections] = useState({
+  const defaultFilters = getLastSelectedFilters() ?? {
     Year: new Date().getFullYear(),
     Month: months[new Date().getMonth()],
-  });
+  };
+
+  const [filterSelections, setFilterSelections] = useState(defaultFilters);
 
   useEffect(() => {
-    //TODO
-    //Get the last filter selections from local storage and set them here
-
     // apply happens when ever state for filterSelections changes
     handleApply(filterSelections);
   }, [filterSelections]);
@@ -151,6 +153,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
         handleClose={handleClose}
         isOpen={open}
         handleApply={handleApply}
+        setFilterSelections={setFilterSelections}
       ></AddExpenseModalComponent>
     </ToolbarContainer>
   );

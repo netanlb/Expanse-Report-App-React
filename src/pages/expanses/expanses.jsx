@@ -9,7 +9,7 @@ export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState();
   const [chosenExpense, setChosenExpense] = useState();
   const [expenseList, setExpenseList] = useState();
-
+  console.log(currentFilters);
   useEffect(() => {
     currentFilters && setExpenseList(getExpenses(currentFilters));
   }, [currentFilters]);
