@@ -64,7 +64,6 @@ export const BottomButtons = styled(Container)(() => ({
 }));
 
 export const Description = styled(Container)(() => ({
-  width: "90%",
   display: "block",
   backgroundColor: "var(--purple-light-opacity-20)",
   padding: "10px",

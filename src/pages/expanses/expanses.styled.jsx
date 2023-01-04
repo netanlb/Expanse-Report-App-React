@@ -10,7 +10,7 @@ export const StyledContainer = styled(Container)(() => ({
 
 export const StyledBox = styled(Box)(() => ({
   display: "grid",
-  gridTemplateColumns: "1fr 2fr",
+  gridTemplateColumns: "2fr 3fr",
 }));
 
 export const customScroll = {

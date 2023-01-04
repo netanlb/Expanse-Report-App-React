@@ -30,63 +30,66 @@ export default function SpecificExpenseDetails({
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <ExpenseHeader disableGutters>
-        <IconButton
-          onClick={() => {
-            setChosenExpense();
-          }}
-        >
-          <CancelIcon sx={{ color: "white" }} />
-        </IconButton>
-        <span>Expense Details</span>
-      </ExpenseHeader>
       <Container
+        disableGutters
         sx={{
           background: "white",
           textAlign: "center",
           ...customScroll,
-          height: "100%",
+          paddingBottom: "1em",
         }}
       >
-        <h1>{chosenExpense.name}</h1>
-        <h2 style={sumText}>{chosenExpense.sum}₪</h2>
-        <CatDateWrapper>
-          <div>
-            {icons[chosenExpense.category]}
-            {chosenExpense.category}
-          </div>
-
-          <div>
-            <EventIcon
-              sx={{
-                color: "var(--purple-light)",
-                fontSize: "2.3em",
-                marginRight: ".5em",
-              }}
-            />
-            {formatDate(chosenExpense.date)}
-          </div>
-        </CatDateWrapper>
-        {chosenExpense.description && (
-          <Description>{chosenExpense.description}</Description>
-        )}
-
-        <MapWrapper>
-          <img src="./map.jpg" alt="map" style={mapStyle} />
-        </MapWrapper>
-        <BottomButtons>
-          <Button
-            variant="contained"
-            color="error"
-            startIcon={<DeleteIcon />}
-            sx={{ marginTop: "20px" }}
+        <ExpenseHeader disableGutters>
+          <IconButton
             onClick={() => {
-              deleteExpense(chosenExpense.id);
+              setChosenExpense();
             }}
           >
-            Delete Expense
-          </Button>
-        </BottomButtons>
+            <CancelIcon sx={{ color: "white" }} />
+          </IconButton>
+          <span>Expense Details</span>
+        </ExpenseHeader>
+        <Container>
+          <h1>{chosenExpense.name}</h1>
+          <h2 style={sumText}>{chosenExpense.sum}₪</h2>
+          <CatDateWrapper disableGutters>
+            <div>
+              {icons[chosenExpense.category]}
+              {chosenExpense.category}
+            </div>
+
+            <div>
+              <EventIcon
+                sx={{
+                  color: "var(--purple-light)",
+                  fontSize: "2.3em",
+                  marginRight: ".5em",
+                }}
+              />
+              {formatDate(chosenExpense.date)}
+            </div>
+          </CatDateWrapper>
+          {chosenExpense.description && (
+            <Description>{chosenExpense.description}</Description>
+          )}
+
+          <MapWrapper>
+            <img src="./map.jpg" alt="map" style={mapStyle} />
+          </MapWrapper>
+          <BottomButtons>
+            <Button
+              variant="contained"
+              color="error"
+              startIcon={<DeleteIcon />}
+              sx={{ marginTop: "20px" }}
+              onClick={() => {
+                deleteExpense(chosenExpense.id);
+              }}
+            >
+              Delete Expense
+            </Button>
+          </BottomButtons>
+        </Container>
       </Container>
     </div>
   );
