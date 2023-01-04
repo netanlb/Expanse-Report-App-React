@@ -24,6 +24,7 @@ export default function ExpensesComponent() {
     <StyledContainer disableGutters>
       <ExpenseToolbarComponent
         handleApply={setCurrentFilters}
+        setChosenExpense={setChosenExpense}
       ></ExpenseToolbarComponent>
       {expenseList?.length ? (
         <StyledBox>

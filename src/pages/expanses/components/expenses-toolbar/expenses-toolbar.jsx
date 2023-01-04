@@ -39,7 +39,10 @@ const months = [
   "December",
 ];
 
-export default function ExpenseToolbarComponent({ handleApply }) {
+export default function ExpenseToolbarComponent({
+  handleApply,
+  setChosenExpense,
+}) {
   const defaultFilters = getLastSelectedFilters() ?? {
     Year: new Date().getFullYear(),
     Month: months[new Date().getMonth()],
@@ -53,8 +56,6 @@ export default function ExpenseToolbarComponent({ handleApply }) {
   }, [filterSelections, handleApply]);
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   const dropdowns = {
     Year: getFilterOptions().years,
@@ -140,7 +141,7 @@ export default function ExpenseToolbarComponent({ handleApply }) {
         </Tooltip>
       </FilterBox>
 
-      <AddExpenseButton variant="contained" onClick={handleOpen}>
+      <AddExpenseButton variant="contained" onClick={() => setOpen(true)}>
         <AddIcon></AddIcon>
         <Typography
           sx={{ fontSize: "0.8em", fontWeight: 700, paddingRight: 1 }}
@@ -149,10 +150,11 @@ export default function ExpenseToolbarComponent({ handleApply }) {
         </Typography>
       </AddExpenseButton>
       <AddExpenseModalComponent
-        handleClose={handleClose}
-        isOpen={open}
+        setOpen={setOpen}
+        open={open}
         handleApply={handleApply}
         setFilterSelections={setFilterSelections}
+        setChosenExpense={setChosenExpense}
       ></AddExpenseModalComponent>
     </ToolbarContainer>
   );

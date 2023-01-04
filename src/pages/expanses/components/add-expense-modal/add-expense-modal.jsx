@@ -37,23 +37,25 @@ import {
 import { useState } from "react";
 
 export default function AddExpenseModalComponent({
-  isOpen,
-  handleClose,
+  open,
+  setOpen,
   setFilterSelections,
+  setChosenExpense,
 }) {
   const [dateValue, setDateValue] = useState(dayjs(new Date()));
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [sum, setSum] = useState("");
-  const [clicked, setClicked] = useState(false)
+  const [alertUser, setAlertUser] = useState(false);
   const checkValidation = () => {
-    return (!!dateValue && !!name && !!category && !!sum)
-  }
+    return !!dateValue && !!name && !!category && !!sum;
+  };
   const handleAddNewExpense = () => {
-    setClicked(true)
-    
-    if (!checkValidation()) return;
+    if (!checkValidation()) {
+      setAlertUser(true);
+      return;
+    }
 
     let expenseObject = {
       name: name,
@@ -67,34 +69,37 @@ export default function AddExpenseModalComponent({
       Year: new Date(expenseObject.date).getFullYear(),
       Month: months[new Date(expenseObject.date).getMonth()],
     });
-    addExpense(expenseObject);
+    const newExpense = addExpense(expenseObject); // setting in local storage and returns expense id
+    setChosenExpense(newExpense);
     closeModal();
   };
 
-  const closeModal = () => {
+  const resetInputs = () => {
     setCategory("");
     setName("");
     setDateValue(dayjs(new Date()));
     setDescription("");
     setSum("");
-    handleClose();
-    setClicked(false)
   };
-  
+
+  const closeModal = () => {
+    resetInputs();
+    setOpen(false);
+    setAlertUser(false);
+  };
 
   return (
     <Modal
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
-      open={isOpen}
-      onClose={closeModal}
+      open={open}
       closeAfterTransition
       BackdropComponent={Backdrop}
       BackdropProps={{
         timeout: 500,
       }}
     >
-      <Fade in={isOpen}>
+      <Fade in={open}>
         <Box sx={modalStyle}>
           <Typography
             sx={{ color: "var(--purple-light)", marginBottom: "1em" }}
@@ -109,7 +114,10 @@ export default function AddExpenseModalComponent({
             label="Bussiness Name"
             id="outlined-start-adornment"
             sx={{ m: 1, width: "50%" }}
-            onChange={(e) => {setName(e.target.value); checkValidation()}}
+            onChange={(e) => {
+              setName(e.target.value);
+              checkValidation();
+            }}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -130,7 +138,7 @@ export default function AddExpenseModalComponent({
               label="Amount"
               onChange={(e) => {
                 setSum(e.target.value);
-              checkValidation()
+                checkValidation();
               }}
             />
           </FormControl>
@@ -139,7 +147,10 @@ export default function AddExpenseModalComponent({
               label="Date"
               inputFormat="DD/MM/YYYY"
               value={dateValue}
-              onChange={(value) => {setDateValue(value); checkValidation()}}
+              onChange={(value) => {
+                setDateValue(value);
+                checkValidation();
+              }}
               renderInput={(params) => (
                 <TextField
                   style={datePickerStyle}
@@ -157,7 +168,7 @@ export default function AddExpenseModalComponent({
             value={category ?? ""}
             onChange={(e) => {
               setCategory(e.target.value);
-              checkValidation()
+              checkValidation();
             }}
             color="secondary"
           >
@@ -204,16 +215,15 @@ export default function AddExpenseModalComponent({
                 background: "var(--purple-hover)",
               },
             }}
-            onClick={()=>{
-              
-              handleAddNewExpense()
+            onClick={() => {
+              handleAddNewExpense();
             }}
             variant="contained"
             color="secondary"
           >
             Add Expense
           </Button>
-          {!checkValidation() && clicked && (
+          {alertUser && (
             <Alert sx={{ marginTop: "20px" }} severity="error">
               Error: You must fill all the fields!
             </Alert>

@@ -64,6 +64,7 @@ function addExpense(expenseObject) {
   expenseObject.id = new Date().getTime();
   temp.push(expenseObject);
   localStorage.setItem("expenses", JSON.stringify(temp));
+  return expenseObject;
 }
 
 function _deleteExpense(id) {
