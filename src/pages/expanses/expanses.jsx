@@ -5,11 +5,41 @@ import ExpenseToolbarComponent from "./components/expenses-toolbar/expenses-tool
 import { useState, useEffect } from "react";
 import { getExpenses, _deleteExpense } from "../../backendService/backend";
 import { Typography, Container } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+import React from "react";
 
 export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState();
   const [chosenExpense, setChosenExpense] = useState();
   const [expenseList, setExpenseList] = useState();
+  const [openSB, setOpenSB] = React.useState(false);
+  const [message, setMessage] = React.useState("");
+  const [messageType, setMessageType] = React.useState("success");
+  const [sbBorderColor, setSbBorderColor] = React.useState("darkseagreen");
+  const handleCloseSB = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenSB(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener(
+      "openSnakeBar",
+      (e) => {
+        setMessage(e.detail.message);
+        setMessageType(e.detail.type);
+        if (e.detail.type === "success") setSbBorderColor("darkseagreen");
+        else if (e.detail.type === "warning") setSbBorderColor("orange");
+        else if (e.detail.type === "error") setSbBorderColor("palevioletred");
+        else setSbBorderColor("lightblue");
+        setOpenSB(true);
+      },
+      false
+    );
+  }, []);
   useEffect(() => {
     currentFilters && setExpenseList(getExpenses(currentFilters));
   }, [currentFilters]);
@@ -48,6 +78,19 @@ export default function ExpensesComponent() {
           </Typography>
         </Container>
       )}
+      <Snackbar
+        sx={{
+          border: "1px solid",
+          borderColor: sbBorderColor,
+          borderRadius: "10px",
+          overflow: "hidden",
+        }}
+        open={openSB}
+        autoHideDuration={4000}
+        onClose={handleCloseSB}
+      >
+        <Alert severity={messageType}>{message}</Alert>
+      </Snackbar>
     </StyledContainer>
   );
 }

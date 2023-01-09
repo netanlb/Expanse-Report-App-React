@@ -27,7 +27,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { icons } from "../expenses-list/expenses-list";
 import dayjs from "dayjs";
-
+import React from "react";
 import {
   addExpense,
   getFilterOptions,
@@ -35,7 +35,6 @@ import {
 } from "../../../../backendService/backend";
 
 import { useState } from "react";
-
 export default function AddExpenseModalComponent({
   open,
   setOpen,
@@ -48,10 +47,16 @@ export default function AddExpenseModalComponent({
   const [description, setDescription] = useState("");
   const [sum, setSum] = useState("");
   const [alertUser, setAlertUser] = useState(false);
+  
+  const openSnakeBar = (type, message) => {
+    document.dispatchEvent(new CustomEvent('openSnakeBar', { detail: {type: type, message: message}}));
+  }
+
   const checkValidation = () => {
     return !!dateValue && !!name && !!category && !!sum;
   };
   const handleAddNewExpense = () => {
+
     if (!checkValidation()) {
       setAlertUser(true);
       return;
@@ -72,6 +77,8 @@ export default function AddExpenseModalComponent({
     const newExpense = addExpense(expenseObject); // setting in local storage and returns expense id
     setChosenExpense(newExpense);
     closeModal();
+    openSnakeBar('success', 'Expense added successfully!');
+
   };
 
   const resetInputs = () => {
