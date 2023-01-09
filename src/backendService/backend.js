@@ -95,18 +95,18 @@ function getExpenses(filterObject) {
   if (!filterObject) return temp;
   //If no filter is selected, set default filter to current month and year
 
-  if (filterObject.Year) {
+  if (filterObject.year) {
     temp = temp.filter(
-      (item) => new Date(item.date).getFullYear() === filterObject.Year
+      (item) => new Date(item.date).getFullYear() === filterObject.year
     );
   }
-  if (filterObject.Month) {
+  if (filterObject.month) {
     temp = temp.filter(
-      (item) => months[new Date(item.date).getMonth()] === filterObject.Month
+      (item) => months[new Date(item.date).getMonth()] === filterObject.month
     );
   }
-  if (filterObject.Category) {
-    temp = temp.filter((item) => item.category === filterObject.Category);
+  if (filterObject.category) {
+    temp = temp.filter((item) => item.category === filterObject.category);
   }
   if (filterObject.startSum) {
     temp = temp.filter((item) => item.sum >= filterObject.startSum);

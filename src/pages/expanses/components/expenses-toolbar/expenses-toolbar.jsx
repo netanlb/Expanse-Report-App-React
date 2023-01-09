@@ -44,8 +44,8 @@ export default function ExpenseToolbarComponent({
   setChosenExpense,
 }) {
   const defaultFilters = getLastSelectedFilters() ?? {
-    Year: new Date().getFullYear(),
-    Month: months[new Date().getMonth()],
+    year: new Date().getFullYear(),
+    month: months[new Date().getMonth()],
   };
 
   const [filterSelections, setFilterSelections] = useState(defaultFilters);
@@ -58,9 +58,9 @@ export default function ExpenseToolbarComponent({
   const [open, setOpen] = useState(false);
 
   const dropdowns = {
-    Year: getFilterOptions().years,
-    Month: getFilterOptions().months,
-    Category: getFilterOptions().categories,
+    year: getFilterOptions().years,
+    month: getFilterOptions().months,
+    category: getFilterOptions().categories,
   };
 
   const handleChange = (value, key) => {
