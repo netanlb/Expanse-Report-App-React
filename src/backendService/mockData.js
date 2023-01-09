@@ -3042,7 +3042,7 @@ const mockData = [
   },
   {
     id: 381,
-    date: "2023-01-00T22:15:22Z",
+    date: "2023-01-02T22:15:22Z",
     category: "Other",
     name: "Barton and Sons",
     sum: 658,
