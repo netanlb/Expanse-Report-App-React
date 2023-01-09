@@ -22,17 +22,17 @@ export default function Legend({ currentFilters }) {
         }}
       >
         <span className="item">|&nbsp;&nbsp;&nbsp;</span>
-        {currentFilters.Year && (
-          <span className="item">{currentFilters.Year}&nbsp;&nbsp;&nbsp;|</span>
+        {currentFilters.year && (
+          <span className="item">{currentFilters.year}&nbsp;&nbsp;&nbsp;|</span>
         )}
-        {currentFilters.Month && (
+        {currentFilters.month && (
           <span className="item">
-            {currentFilters.Month}&nbsp;&nbsp;&nbsp;|
+            {currentFilters.month}&nbsp;&nbsp;&nbsp;|
           </span>
         )}
-        {currentFilters.Category && (
+        {currentFilters.category && (
           <span className="item">
-            {currentFilters.Category}&nbsp;&nbsp;&nbsp;|
+            {currentFilters.category}&nbsp;&nbsp;&nbsp;|
           </span>
         )}
         {currentFilters.startSum && (

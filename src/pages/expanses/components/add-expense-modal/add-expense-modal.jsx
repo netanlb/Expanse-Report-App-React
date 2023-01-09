@@ -66,8 +66,8 @@ export default function AddExpenseModalComponent({
     };
 
     setFilterSelections({
-      Year: new Date(expenseObject.date).getFullYear(),
-      Month: months[new Date(expenseObject.date).getMonth()],
+      year: new Date(expenseObject.date).getFullYear(),
+      month: months[new Date(expenseObject.date).getMonth()],
     });
     const newExpense = addExpense(expenseObject); // setting in local storage and returns expense id
     setChosenExpense(newExpense);

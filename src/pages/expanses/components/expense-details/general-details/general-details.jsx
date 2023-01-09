@@ -27,9 +27,9 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
   };
 
   const filtersExists = !!(
-    currentFilters?.Year ||
-    currentFilters?.Month ||
-    currentFilters?.Category ||
+    currentFilters?.year ||
+    currentFilters?.month ||
+    currentFilters?.category ||
     currentFilters?.startSum ||
     currentFilters?.endSum
   );
@@ -67,7 +67,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
             Average: {calcAvgExpense().toLocaleString()}₪
           </span>
         </Typography>
-        {!currentFilters?.Month && (
+        {!currentFilters?.month && (
           <div>
             <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
               EXPENSES BY MONTH
@@ -88,7 +88,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
             </Box>
           </div>
         )}
-        {!currentFilters?.Category && (
+        {!currentFilters?.category && (
           <div>
             <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
               EXPENSES BY CATEGORY
@@ -109,7 +109,7 @@ export default function GeneralDetails({ expenseList, currentFilters }) {
             </Box>
           </div>
         )}
-        {!currentFilters?.Year && (
+        {!currentFilters?.year && (
           <div>
             <Typography sx={{ fontWeight: 600, textAlign: "center" }}>
               EXPENSES BY YEAR
