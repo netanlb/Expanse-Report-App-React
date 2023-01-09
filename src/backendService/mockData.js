@@ -146,7 +146,7 @@ const mockData = [
   },
   {
     id: 19,
-    date: "2023-11-04T11:37:04Z",
+    date: "2019-11-04T11:37:04Z",
     category: "Food",
     name: "Kreiger and Sons",
     sum: 798,
@@ -154,7 +154,7 @@ const mockData = [
   },
   {
     id: 20,
-    date: "2023-02-23T20:40:23Z",
+    date: "2019-02-23T20:40:23Z",
     category: "Bills",
     name: "Hane-Bergstrom",
     sum: 154,
@@ -202,7 +202,7 @@ const mockData = [
   },
   {
     id: 26,
-    date: "2023-03-08T15:27:48Z",
+    date: "2019-03-08T15:27:48Z",
     category: "Restaurants",
     name: "Upton LLC",
     sum: 665,
@@ -242,7 +242,7 @@ const mockData = [
   },
   {
     id: 31,
-    date: "2023-04-24T09:32:08Z",
+    date: "2019-04-24T09:32:08Z",
     category: "Groceries",
     name: "Ruecker-Sanford",
     sum: 231,
@@ -250,7 +250,7 @@ const mockData = [
   },
   {
     id: 32,
-    date: "2023-06-29T22:42:51Z",
+    date: "2019-06-29T22:42:51Z",
     category: "Restaurants",
     name: "Veum Inc",
     sum: 64,
@@ -290,7 +290,7 @@ const mockData = [
   },
   {
     id: 37,
-    date: "2023-12-28T20:14:10Z",
+    date: "2019-12-28T20:14:10Z",
     category: "Groceries",
     name: "Lebsack and Sons",
     sum: 247,
@@ -298,7 +298,7 @@ const mockData = [
   },
   {
     id: 38,
-    date: "2023-04-25T09:59:54Z",
+    date: "2019-04-25T09:59:54Z",
     category: "Bills",
     name: "Murray-Kulas",
     sum: 391,
@@ -354,7 +354,7 @@ const mockData = [
   },
   {
     id: 45,
-    date: "2023-12-25T12:56:26Z",
+    date: "2019-12-25T12:56:26Z",
     category: "Home",
     name: "Dickinson, Jenkins and Bailey",
     sum: 571,
@@ -514,7 +514,7 @@ const mockData = [
   },
   {
     id: 65,
-    date: "2023-01-16T22:54:44Z",
+    date: "2023-01-06T22:54:44Z",
     category: "Entertainment",
     name: "Koepp, O'Conner and Kilback",
     sum: 769,
@@ -554,7 +554,7 @@ const mockData = [
   },
   {
     id: 70,
-    date: "2023-04-17T19:28:58Z",
+    date: "2019-04-17T19:28:58Z",
     category: "Insurence",
     name: "Schimmel-Frami",
     sum: 153,
@@ -650,7 +650,7 @@ const mockData = [
   },
   {
     id: 82,
-    date: "2023-11-10T19:30:16Z",
+    date: "2019-11-10T19:30:16Z",
     category: "Transportation",
     name: "Metz, Murray and Muller",
     sum: 358,
@@ -666,7 +666,7 @@ const mockData = [
   },
   {
     id: 84,
-    date: "2023-06-28T07:04:19Z",
+    date: "2019-06-28T07:04:19Z",
     category: "Groceries",
     name: "Reichel, Wisozk and Casper",
     sum: 115,
@@ -738,7 +738,7 @@ const mockData = [
   },
   {
     id: 93,
-    date: "2023-09-13T21:04:50Z",
+    date: "2019-09-13T21:04:50Z",
     category: "Energy",
     name: "Kassulke LLC",
     sum: 783,
@@ -770,7 +770,7 @@ const mockData = [
   },
   {
     id: 97,
-    date: "2023-04-05T07:21:49Z",
+    date: "2019-04-05T07:21:49Z",
     category: "Restaurants",
     name: "Braun, Wolf and Christiansen",
     sum: 465,
@@ -786,7 +786,7 @@ const mockData = [
   },
   {
     id: 99,
-    date: "2023-11-05T03:58:55Z",
+    date: "2019-11-05T03:58:55Z",
     category: "Bills",
     name: "Keeling, Schumm and Kerluke",
     sum: 683,
@@ -890,7 +890,7 @@ const mockData = [
   },
   {
     id: 112,
-    date: "2023-03-26T20:08:50Z",
+    date: "2019-03-26T20:08:50Z",
     category: "Home",
     name: "Greenholt and Sons",
     sum: 81,
@@ -946,7 +946,7 @@ const mockData = [
   },
   {
     id: 119,
-    date: "2023-03-27T15:54:14Z",
+    date: "2019-03-27T15:54:14Z",
     category: "Entertainment",
     name: "Halvorson, Thiel and Orn",
     sum: 587,
@@ -970,7 +970,7 @@ const mockData = [
   },
   {
     id: 122,
-    date: "2023-12-06T23:30:41Z",
+    date: "2019-12-06T23:30:41Z",
     category: "Energy",
     name: "Littel, DuBuque and Rodriguez",
     sum: 87,
@@ -1026,7 +1026,7 @@ const mockData = [
   },
   {
     id: 129,
-    date: "2023-10-11T22:22:17Z",
+    date: "2019-10-11T22:22:17Z",
     category: "Entertainment",
     name: "Schinner, Olson and Homenick",
     sum: 405,
@@ -1074,7 +1074,7 @@ const mockData = [
   },
   {
     id: 135,
-    date: "2023-08-26T12:43:19Z",
+    date: "2019-08-26T12:43:19Z",
     category: "Entertainment",
     name: "Tremblay LLC",
     sum: 708,
@@ -1154,7 +1154,7 @@ const mockData = [
   },
   {
     id: 145,
-    date: "2023-04-21T20:17:52Z",
+    date: "2019-04-21T20:17:52Z",
     category: "Food",
     name: "Rice-Luettgen",
     sum: 779,
@@ -1170,7 +1170,7 @@ const mockData = [
   },
   {
     id: 147,
-    date: "2023-05-18T02:33:12Z",
+    date: "2019-05-18T02:33:12Z",
     category: "Home",
     name: "Witting, Bernhard and Rice",
     sum: 152,
@@ -1226,7 +1226,7 @@ const mockData = [
   },
   {
     id: 154,
-    date: "2023-04-02T19:40:36Z",
+    date: "2019-04-02T19:40:36Z",
     category: "Food",
     name: "Boyer-Nienow",
     sum: 795,
@@ -1234,7 +1234,7 @@ const mockData = [
   },
   {
     id: 155,
-    date: "2023-12-19T22:35:09Z",
+    date: "2019-12-19T22:35:09Z",
     category: "Home",
     name: "Nader-Hettinger",
     sum: 706,
@@ -1258,7 +1258,7 @@ const mockData = [
   },
   {
     id: 158,
-    date: "2023-02-28T20:18:40Z",
+    date: "2019-02-28T20:18:40Z",
     category: "Groceries",
     name: "Haag Group",
     sum: 570,
@@ -1274,7 +1274,7 @@ const mockData = [
   },
   {
     id: 160,
-    date: "2023-09-23T04:24:45Z",
+    date: "2019-09-23T04:24:45Z",
     category: "Transportation",
     name: "Wehner, Wilkinson and Stark",
     sum: 474,
@@ -1330,7 +1330,7 @@ const mockData = [
   },
   {
     id: 167,
-    date: "2023-05-04T14:39:38Z",
+    date: "2019-05-04T14:39:38Z",
     category: "Entertainment",
     name: "Prosacco-Johnston",
     sum: 236,
@@ -1378,7 +1378,7 @@ const mockData = [
   },
   {
     id: 173,
-    date: "2023-12-22T09:19:29Z",
+    date: "2019-12-22T09:19:29Z",
     category: "Home",
     name: "Willms-Feil",
     sum: 727,
@@ -1394,7 +1394,7 @@ const mockData = [
   },
   {
     id: 175,
-    date: "2023-03-25T20:47:58Z",
+    date: "2019-03-25T20:47:58Z",
     category: "Home",
     name: "Mueller LLC",
     sum: 336,
@@ -1434,7 +1434,7 @@ const mockData = [
   },
   {
     id: 180,
-    date: "2023-11-24T02:45:43Z",
+    date: "2019-11-24T02:45:43Z",
     category: "Entertainment",
     name: "Carter-Wilderman",
     sum: 148,
@@ -1490,7 +1490,7 @@ const mockData = [
   },
   {
     id: 187,
-    date: "2023-09-26T13:50:44Z",
+    date: "2019-09-26T13:50:44Z",
     category: "Food",
     name: "Howell-Paucek",
     sum: 127,
@@ -1514,7 +1514,7 @@ const mockData = [
   },
   {
     id: 190,
-    date: "2023-11-28T01:46:49Z",
+    date: "2019-11-28T01:46:49Z",
     category: "Communication",
     name: "McClure-Pfeffer",
     sum: 114,
@@ -1522,7 +1522,7 @@ const mockData = [
   },
   {
     id: 191,
-    date: "2023-02-04T15:21:14Z",
+    date: "2019-02-04T15:21:14Z",
     category: "Restaurants",
     name: "Schinner LLC",
     sum: 104,
@@ -1594,7 +1594,7 @@ const mockData = [
   },
   {
     id: 200,
-    date: "2023-11-25T12:46:49Z",
+    date: "2019-11-25T12:46:49Z",
     category: "Entertainment",
     name: "White, Hahn and Corwin",
     sum: 88,
@@ -1634,7 +1634,7 @@ const mockData = [
   },
   {
     id: 205,
-    date: "2023-01-26T00:28:20Z",
+    date: "2023-01-06T00:28:20Z",
     category: "Communication",
     name: "Weimann Inc",
     sum: 554,
@@ -1650,7 +1650,7 @@ const mockData = [
   },
   {
     id: 207,
-    date: "2023-11-06T13:22:54Z",
+    date: "2019-11-06T13:22:54Z",
     category: "Insurence",
     name: "Ryan, Kunze and Huel",
     sum: 586,
@@ -1738,7 +1738,7 @@ const mockData = [
   },
   {
     id: 218,
-    date: "2023-02-02T00:54:18Z",
+    date: "2019-02-02T00:54:18Z",
     category: "Food",
     name: "Reichel-Tremblay",
     sum: 201,
@@ -1754,7 +1754,7 @@ const mockData = [
   },
   {
     id: 220,
-    date: "2023-04-07T03:54:57Z",
+    date: "2019-04-07T03:54:57Z",
     category: "Transportation",
     name: "Abshire-Lindgren",
     sum: 584,
@@ -1810,7 +1810,7 @@ const mockData = [
   },
   {
     id: 227,
-    date: "2023-07-28T20:25:44Z",
+    date: "2019-07-28T20:25:44Z",
     category: "Home",
     name: "Labadie, Bergstrom and Mosciski",
     sum: 381,
@@ -1826,7 +1826,7 @@ const mockData = [
   },
   {
     id: 229,
-    date: "2023-03-07T18:46:06Z",
+    date: "2019-03-07T18:46:06Z",
     category: "Restaurants",
     name: "Kling-Jacobson",
     sum: 435,
@@ -1850,7 +1850,7 @@ const mockData = [
   },
   {
     id: 232,
-    date: "2023-09-03T14:16:41Z",
+    date: "2019-09-03T14:16:41Z",
     category: "Transportation",
     name: "Thiel-Hegmann",
     sum: 332,
@@ -1978,7 +1978,7 @@ const mockData = [
   },
   {
     id: 248,
-    date: "2023-09-06T08:10:17Z",
+    date: "2019-09-06T08:10:17Z",
     category: "Insurence",
     name: "Mertz-Pagac",
     sum: 311,
@@ -2034,7 +2034,7 @@ const mockData = [
   },
   {
     id: 255,
-    date: "2023-08-16T03:14:28Z",
+    date: "2019-08-16T03:14:28Z",
     category: "Bills",
     name: "Lehner LLC",
     sum: 393,
@@ -2066,7 +2066,7 @@ const mockData = [
   },
   {
     id: 259,
-    date: "2023-03-17T18:44:53Z",
+    date: "2019-03-17T18:44:53Z",
     category: "Bills",
     name: "Gerlach and Sons",
     sum: 681,
@@ -2178,7 +2178,7 @@ const mockData = [
   },
   {
     id: 273,
-    date: "2023-05-16T14:55:57Z",
+    date: "2019-05-16T14:55:57Z",
     category: "Communication",
     name: "Rempel-Kutch",
     sum: 717,
@@ -2202,7 +2202,7 @@ const mockData = [
   },
   {
     id: 276,
-    date: "2023-08-21T06:22:00Z",
+    date: "2019-08-21T06:22:00Z",
     category: "Restaurants",
     name: "Willms, Schulist and Reynolds",
     sum: 558,
@@ -2250,7 +2250,7 @@ const mockData = [
   },
   {
     id: 282,
-    date: "2023-08-15T16:51:55Z",
+    date: "2019-08-15T16:51:55Z",
     category: "Bills",
     name: "Carter, Abbott and Kuphal",
     sum: 766,
@@ -2282,7 +2282,7 @@ const mockData = [
   },
   {
     id: 286,
-    date: "2023-07-18T20:23:16Z",
+    date: "2019-07-18T20:23:16Z",
     category: "Insurence",
     name: "Bartell Group",
     sum: 548,
@@ -2290,7 +2290,7 @@ const mockData = [
   },
   {
     id: 287,
-    date: "2023-12-14T20:29:25Z",
+    date: "2019-12-14T20:29:25Z",
     category: "Transportation",
     name: "Pollich-Klocko",
     sum: 77,
@@ -2306,7 +2306,7 @@ const mockData = [
   },
   {
     id: 289,
-    date: "2023-01-14T02:33:18Z",
+    date: "2023-01-04T02:33:18Z",
     category: "Entertainment",
     name: "Gutkowski, Parker and Reynolds",
     sum: 354,
@@ -2338,7 +2338,7 @@ const mockData = [
   },
   {
     id: 293,
-    date: "2023-08-25T22:28:12Z",
+    date: "2019-08-25T22:28:12Z",
     category: "Restaurants",
     name: "Hintz-Tillman",
     sum: 347,
@@ -2522,7 +2522,7 @@ const mockData = [
   },
   {
     id: 316,
-    date: "2023-07-26T20:34:55Z",
+    date: "2019-07-26T20:34:55Z",
     category: "Food",
     name: "Ernser Inc",
     sum: 100,
@@ -2546,7 +2546,7 @@ const mockData = [
   },
   {
     id: 319,
-    date: "2023-04-02T16:35:23Z",
+    date: "2019-04-02T16:35:23Z",
     category: "Insurence",
     name: "Koepp, Sanford and Leuschke",
     sum: 165,
@@ -2562,7 +2562,7 @@ const mockData = [
   },
   {
     id: 321,
-    date: "2023-06-12T19:01:58Z",
+    date: "2019-06-12T19:01:58Z",
     category: "Bills",
     name: "Von, Bradtke and Purdy",
     sum: 158,
@@ -2706,7 +2706,7 @@ const mockData = [
   },
   {
     id: 339,
-    date: "2023-03-17T02:31:08Z",
+    date: "2019-03-17T02:31:08Z",
     category: "Communication",
     name: "DuBuque-Cartwright",
     sum: 747,
@@ -2714,7 +2714,7 @@ const mockData = [
   },
   {
     id: 340,
-    date: "2023-03-21T18:04:15Z",
+    date: "2019-03-21T18:04:15Z",
     category: "Other",
     name: "Schulist LLC",
     sum: 515,
@@ -2722,7 +2722,7 @@ const mockData = [
   },
   {
     id: 341,
-    date: "2023-05-03T01:18:57Z",
+    date: "2019-05-03T01:18:57Z",
     category: "Food",
     name: "Mueller-Welch",
     sum: 747,
@@ -2770,7 +2770,7 @@ const mockData = [
   },
   {
     id: 347,
-    date: "2023-05-22T08:56:55Z",
+    date: "2019-05-22T08:56:55Z",
     category: "Bills",
     name: "Macejkovic-Dietrich",
     sum: 246,
@@ -2778,7 +2778,7 @@ const mockData = [
   },
   {
     id: 348,
-    date: "2023-02-02T03:42:28Z",
+    date: "2019-02-02T03:42:28Z",
     category: "Bills",
     name: "Shields, Nitzsche and Price",
     sum: 341,
@@ -2786,7 +2786,7 @@ const mockData = [
   },
   {
     id: 349,
-    date: "2023-08-14T00:30:23Z",
+    date: "2019-08-14T00:30:23Z",
     category: "Groceries",
     name: "Turcotte and Sons",
     sum: 743,
@@ -2818,7 +2818,7 @@ const mockData = [
   },
   {
     id: 353,
-    date: "2023-06-10T05:57:48Z",
+    date: "2019-06-10T05:57:48Z",
     category: "Insurence",
     name: "Ankunding-Maggio",
     sum: 399,
@@ -2858,7 +2858,7 @@ const mockData = [
   },
   {
     id: 358,
-    date: "2023-09-26T16:37:48Z",
+    date: "2019-09-26T16:37:48Z",
     category: "Energy",
     name: "Howell and Sons",
     sum: 501,
@@ -2882,7 +2882,7 @@ const mockData = [
   },
   {
     id: 361,
-    date: "2023-11-12T18:36:28Z",
+    date: "2019-11-12T18:36:28Z",
     category: "Other",
     name: "Douglas, Shanahan and Harber",
     sum: 741,
@@ -2930,7 +2930,7 @@ const mockData = [
   },
   {
     id: 367,
-    date: "2023-07-02T02:34:08Z",
+    date: "2019-07-02T02:34:08Z",
     category: "Communication",
     name: "Monahan-Stehr",
     sum: 145,
@@ -2962,7 +2962,7 @@ const mockData = [
   },
   {
     id: 371,
-    date: "2023-09-19T17:01:54Z",
+    date: "2019-09-19T17:01:54Z",
     category: "Home",
     name: "Schneider-Johnston",
     sum: 78,
@@ -2986,7 +2986,7 @@ const mockData = [
   },
   {
     id: 374,
-    date: "2023-10-25T11:03:59Z",
+    date: "2019-10-25T11:03:59Z",
     category: "Communication",
     name: "Simonis-Douglas",
     sum: 790,
@@ -3010,7 +3010,7 @@ const mockData = [
   },
   {
     id: 377,
-    date: "2023-05-31T21:07:22Z",
+    date: "2019-05-31T21:07:22Z",
     category: "Communication",
     name: "Lowe Group",
     sum: 639,
@@ -3042,7 +3042,7 @@ const mockData = [
   },
   {
     id: 381,
-    date: "2023-01-20T22:15:22Z",
+    date: "2023-01-00T22:15:22Z",
     category: "Other",
     name: "Barton and Sons",
     sum: 658,
@@ -3178,7 +3178,7 @@ const mockData = [
   },
   {
     id: 398,
-    date: "2023-02-16T10:39:40Z",
+    date: "2019-02-16T10:39:40Z",
     category: "Bills",
     name: "Adams, Schoen and Hyatt",
     sum: 502,
@@ -3186,7 +3186,7 @@ const mockData = [
   },
   {
     id: 399,
-    date: "2023-04-04T00:17:43Z",
+    date: "2019-04-04T00:17:43Z",
     category: "Other",
     name: "Olson, Cronin and Buckridge",
     sum: 509,
@@ -3226,7 +3226,7 @@ const mockData = [
   },
   {
     id: 404,
-    date: "2023-10-29T20:35:53Z",
+    date: "2019-10-29T20:35:53Z",
     category: "Energy",
     name: "O'Reilly-McClure",
     sum: 482,
@@ -3234,7 +3234,7 @@ const mockData = [
   },
   {
     id: 405,
-    date: "2023-11-18T19:34:16Z",
+    date: "2019-11-18T19:34:16Z",
     category: "Bills",
     name: "Johnston Group",
     sum: 429,
@@ -3258,7 +3258,7 @@ const mockData = [
   },
   {
     id: 408,
-    date: "2023-09-02T10:02:23Z",
+    date: "2019-09-02T10:02:23Z",
     category: "Communication",
     name: "Smitham, Lubowitz and Kub",
     sum: 288,
@@ -3314,7 +3314,7 @@ const mockData = [
   },
   {
     id: 415,
-    date: "2023-04-02T01:26:32Z",
+    date: "2019-04-02T01:26:32Z",
     category: "Home",
     name: "Cummings, McDermott and Leuschke",
     sum: 76,
@@ -3322,7 +3322,7 @@ const mockData = [
   },
   {
     id: 416,
-    date: "2023-03-14T23:28:33Z",
+    date: "2019-03-14T23:28:33Z",
     category: "Bills",
     name: "Gislason, Bernier and Hansen",
     sum: 248,
@@ -3346,7 +3346,7 @@ const mockData = [
   },
   {
     id: 419,
-    date: "2023-09-21T10:35:22Z",
+    date: "2019-09-21T10:35:22Z",
     category: "Home",
     name: "O'Connell and Sons",
     sum: 715,
@@ -3386,7 +3386,7 @@ const mockData = [
   },
   {
     id: 424,
-    date: "2023-07-15T04:06:07Z",
+    date: "2019-07-15T04:06:07Z",
     category: "Bills",
     name: "Balistreri and Sons",
     sum: 571,
@@ -3458,7 +3458,7 @@ const mockData = [
   },
   {
     id: 433,
-    date: "2023-08-04T05:50:16Z",
+    date: "2019-08-04T05:50:16Z",
     category: "Entertainment",
     name: "Gusikowski, Yundt and Hodkiewicz",
     sum: 685,
@@ -3490,7 +3490,7 @@ const mockData = [
   },
   {
     id: 437,
-    date: "2023-02-10T03:52:21Z",
+    date: "2019-02-10T03:52:21Z",
     category: "Transportation",
     name: "Leffler, Turcotte and Quigley",
     sum: 768,
@@ -3562,7 +3562,7 @@ const mockData = [
   },
   {
     id: 446,
-    date: "2023-10-06T22:54:08Z",
+    date: "2019-10-06T22:54:08Z",
     category: "Food",
     name: "Johns Inc",
     sum: 149,
@@ -3634,7 +3634,7 @@ const mockData = [
   },
   {
     id: 455,
-    date: "2023-06-02T16:13:55Z",
+    date: "2019-06-02T16:13:55Z",
     category: "Food",
     name: "Batz LLC",
     sum: 500,
@@ -3650,7 +3650,7 @@ const mockData = [
   },
   {
     id: 457,
-    date: "2023-06-30T15:55:10Z",
+    date: "2019-06-30T15:55:10Z",
     category: "Communication",
     name: "Hirthe-Olson",
     sum: 761,
@@ -3762,7 +3762,7 @@ const mockData = [
   },
   {
     id: 471,
-    date: "2023-02-27T05:05:09Z",
+    date: "2019-02-27T05:05:09Z",
     category: "Other",
     name: "Terry, Torphy and Spinka",
     sum: 520,
@@ -3778,7 +3778,7 @@ const mockData = [
   },
   {
     id: 473,
-    date: "2023-03-29T19:55:53Z",
+    date: "2019-03-29T19:55:53Z",
     category: "Bills",
     name: "Morar, Jacobi and Bahringer",
     sum: 285,
@@ -3842,7 +3842,7 @@ const mockData = [
   },
   {
     id: 481,
-    date: "2023-11-27T02:06:38Z",
+    date: "2019-11-27T02:06:38Z",
     category: "Other",
     name: "Klocko-Prohaska",
     sum: 709,
@@ -3850,7 +3850,7 @@ const mockData = [
   },
   {
     id: 482,
-    date: "2023-02-04T02:29:34Z",
+    date: "2019-02-04T02:29:34Z",
     category: "Home",
     name: "Kirlin, MacGyver and Gleichner",
     sum: 489,
@@ -3858,7 +3858,7 @@ const mockData = [
   },
   {
     id: 483,
-    date: "2023-12-17T02:20:50Z",
+    date: "2019-12-17T02:20:50Z",
     category: "Groceries",
     name: "Blick Inc",
     sum: 685,
@@ -3890,7 +3890,7 @@ const mockData = [
   },
   {
     id: 487,
-    date: "2023-08-15T18:27:55Z",
+    date: "2019-08-15T18:27:55Z",
     category: "Other",
     name: "Gleason Inc",
     sum: 454,
@@ -3906,7 +3906,7 @@ const mockData = [
   },
   {
     id: 489,
-    date: "2023-04-23T03:24:09Z",
+    date: "2019-04-23T03:24:09Z",
     category: "Insurence",
     name: "Ryan and Sons",
     sum: 336,
@@ -3930,7 +3930,7 @@ const mockData = [
   },
   {
     id: 492,
-    date: "2023-10-03T20:22:33Z",
+    date: "2019-10-03T20:22:33Z",
     category: "Insurence",
     name: "Stamm, Walter and Greenfelder",
     sum: 511,
@@ -3978,7 +3978,7 @@ const mockData = [
   },
   {
     id: 498,
-    date: "2023-05-26T12:12:16Z",
+    date: "2019-05-26T12:12:16Z",
     category: "Energy",
     name: "Berge-O'Keefe",
     sum: 490,
@@ -3994,7 +3994,7 @@ const mockData = [
   },
   {
     id: 500,
-    date: "2023-06-03T01:57:44Z",
+    date: "2019-06-03T01:57:44Z",
     category: "Energy",
     name: "Wyman Inc",
     sum: 258,
@@ -4010,7 +4010,7 @@ const mockData = [
   },
   {
     id: 502,
-    date: "2023-05-06T08:33:25Z",
+    date: "2019-05-06T08:33:25Z",
     category: "Transportation",
     name: "Bahringer Inc",
     sum: 637,
@@ -4066,7 +4066,7 @@ const mockData = [
   },
   {
     id: 509,
-    date: "2023-02-06T16:58:35Z",
+    date: "2019-02-06T16:58:35Z",
     category: "Energy",
     name: "Reinger-Krajcik",
     sum: 123,
@@ -4090,7 +4090,7 @@ const mockData = [
   },
   {
     id: 512,
-    date: "2023-12-07T19:30:26Z",
+    date: "2019-12-07T19:30:26Z",
     category: "Insurence",
     name: "Prohaska, Blick and Bednar",
     sum: 756,
@@ -4122,7 +4122,7 @@ const mockData = [
   },
   {
     id: 516,
-    date: "2023-10-25T17:03:38Z",
+    date: "2019-10-25T17:03:38Z",
     category: "Communication",
     name: "Armstrong, Bruen and Jakubowski",
     sum: 139,
@@ -4218,7 +4218,7 @@ const mockData = [
   },
   {
     id: 528,
-    date: "2023-04-13T08:31:09Z",
+    date: "2019-04-13T08:31:09Z",
     category: "Communication",
     name: "Nolan-Botsford",
     sum: 229,
@@ -4234,7 +4234,7 @@ const mockData = [
   },
   {
     id: 530,
-    date: "2023-10-16T20:07:18Z",
+    date: "2019-10-16T20:07:18Z",
     category: "Communication",
     name: "Wyman, Paucek and Sporer",
     sum: 321,
@@ -4250,7 +4250,7 @@ const mockData = [
   },
   {
     id: 532,
-    date: "2023-02-01T22:29:29Z",
+    date: "2019-02-01T22:29:29Z",
     category: "Home",
     name: "Graham Group",
     sum: 522,
@@ -4290,7 +4290,7 @@ const mockData = [
   },
   {
     id: 537,
-    date: "2023-10-18T21:52:59Z",
+    date: "2019-10-18T21:52:59Z",
     category: "Entertainment",
     name: "Howe Inc",
     sum: 376,
@@ -4370,7 +4370,7 @@ const mockData = [
   },
   {
     id: 547,
-    date: "2023-02-27T15:30:20Z",
+    date: "2019-02-27T15:30:20Z",
     category: "Energy",
     name: "Gerhold-Mohr",
     sum: 549,
@@ -4450,7 +4450,7 @@ const mockData = [
   },
   {
     id: 557,
-    date: "2023-09-04T22:56:10Z",
+    date: "2019-09-04T22:56:10Z",
     category: "Home",
     name: "Frami, Bernhard and Prosacco",
     sum: 795,
@@ -4458,7 +4458,7 @@ const mockData = [
   },
   {
     id: 558,
-    date: "2023-07-12T07:26:46Z",
+    date: "2019-07-12T07:26:46Z",
     category: "Communication",
     name: "White Group",
     sum: 793,
@@ -4466,7 +4466,7 @@ const mockData = [
   },
   {
     id: 559,
-    date: "2023-08-31T18:20:32Z",
+    date: "2019-08-31T18:20:32Z",
     category: "Insurence",
     name: "Torphy, McCullough and Gleason",
     sum: 660,
@@ -4498,7 +4498,7 @@ const mockData = [
   },
   {
     id: 563,
-    date: "2023-04-11T22:08:05Z",
+    date: "2019-04-11T22:08:05Z",
     category: "Other",
     name: "Schmitt LLC",
     sum: 260,
@@ -4570,7 +4570,7 @@ const mockData = [
   },
   {
     id: 572,
-    date: "2023-07-26T20:57:34Z",
+    date: "2019-07-26T20:57:34Z",
     category: "Insurence",
     name: "Powlowski-McCullough",
     sum: 473,
@@ -4674,7 +4674,7 @@ const mockData = [
   },
   {
     id: 585,
-    date: "2023-08-30T18:22:36Z",
+    date: "2019-08-30T18:22:36Z",
     category: "Energy",
     name: "Hilpert LLC",
     sum: 316,
@@ -4714,7 +4714,7 @@ const mockData = [
   },
   {
     id: 590,
-    date: "2023-12-31T03:43:52Z",
+    date: "2019-12-31T03:43:52Z",
     category: "Bills",
     name: "Harber and Sons",
     sum: 194,
@@ -4730,7 +4730,7 @@ const mockData = [
   },
   {
     id: 592,
-    date: "2023-10-03T03:33:58Z",
+    date: "2019-10-03T03:33:58Z",
     category: "Insurence",
     name: "Zboncak, Stamm and Grimes",
     sum: 689,
@@ -4874,7 +4874,7 @@ const mockData = [
   },
   {
     id: 610,
-    date: "2023-10-06T04:45:06Z",
+    date: "2019-10-06T04:45:06Z",
     category: "Groceries",
     name: "Kuhn LLC",
     sum: 501,
@@ -4938,7 +4938,7 @@ const mockData = [
   },
   {
     id: 618,
-    date: "2023-09-03T01:54:46Z",
+    date: "2019-09-03T01:54:46Z",
     category: "Groceries",
     name: "Considine LLC",
     sum: 481,
@@ -4954,7 +4954,7 @@ const mockData = [
   },
   {
     id: 620,
-    date: "2023-12-03T19:12:29Z",
+    date: "2019-12-03T19:12:29Z",
     category: "Groceries",
     name: "Schinner LLC",
     sum: 431,
@@ -4962,7 +4962,7 @@ const mockData = [
   },
   {
     id: 621,
-    date: "2023-04-20T06:48:12Z",
+    date: "2019-04-20T06:48:12Z",
     category: "Home",
     name: "Mitchell, Nicolas and Kovacek",
     sum: 591,
@@ -5066,7 +5066,7 @@ const mockData = [
   },
   {
     id: 634,
-    date: "2023-08-17T19:03:31Z",
+    date: "2019-08-17T19:03:31Z",
     category: "Bills",
     name: "Emard Group",
     sum: 510,
@@ -5146,7 +5146,7 @@ const mockData = [
   },
   {
     id: 644,
-    date: "2023-10-15T17:22:24Z",
+    date: "2019-10-15T17:22:24Z",
     category: "Energy",
     name: "Fahey and Sons",
     sum: 391,
@@ -5162,7 +5162,7 @@ const mockData = [
   },
   {
     id: 646,
-    date: "2023-03-07T09:28:58Z",
+    date: "2019-03-07T09:28:58Z",
     category: "Transportation",
     name: "Hyatt, Schroeder and Johnston",
     sum: 655,
@@ -5194,7 +5194,7 @@ const mockData = [
   },
   {
     id: 650,
-    date: "2023-01-21T21:33:01Z",
+    date: "2023-01-01T21:33:01Z",
     category: "Insurence",
     name: "Wiza, Gusikowski and Brown",
     sum: 711,
@@ -5266,7 +5266,7 @@ const mockData = [
   },
   {
     id: 659,
-    date: "2023-05-12T07:38:32Z",
+    date: "2019-05-12T07:38:32Z",
     category: "Communication",
     name: "Hagenes, MacGyver and Swift",
     sum: 153,
@@ -5362,7 +5362,7 @@ const mockData = [
   },
   {
     id: 671,
-    date: "2023-06-14T16:51:17Z",
+    date: "2019-06-14T16:51:17Z",
     category: "Communication",
     name: "Breitenberg and Sons",
     sum: 111,
@@ -5386,7 +5386,7 @@ const mockData = [
   },
   {
     id: 674,
-    date: "2023-07-27T02:31:50Z",
+    date: "2019-07-27T02:31:50Z",
     category: "Entertainment",
     name: "Stokes and Sons",
     sum: 507,
@@ -5498,7 +5498,7 @@ const mockData = [
   },
   {
     id: 688,
-    date: "2023-05-10T18:45:12Z",
+    date: "2019-05-10T18:45:12Z",
     category: "Transportation",
     name: "Huel and Sons",
     sum: 684,
@@ -5522,7 +5522,7 @@ const mockData = [
   },
   {
     id: 691,
-    date: "2023-10-19T03:01:44Z",
+    date: "2019-10-19T03:01:44Z",
     category: "Bills",
     name: "Schmidt LLC",
     sum: 285,
@@ -5554,7 +5554,7 @@ const mockData = [
   },
   {
     id: 695,
-    date: "2023-01-13T21:10:26Z",
+    date: "2023-01-03T21:10:26Z",
     category: "Insurence",
     name: "Morar-Hartmann",
     sum: 786,
@@ -5602,7 +5602,7 @@ const mockData = [
   },
   {
     id: 701,
-    date: "2023-03-03T15:25:07Z",
+    date: "2019-03-03T15:25:07Z",
     category: "Home",
     name: "Kuhlman, O'Keefe and Raynor",
     sum: 276,
@@ -5618,7 +5618,7 @@ const mockData = [
   },
   {
     id: 703,
-    date: "2023-10-19T16:05:50Z",
+    date: "2019-10-19T16:05:50Z",
     category: "Energy",
     name: "Lubowitz-Miller",
     sum: 156,
@@ -5634,7 +5634,7 @@ const mockData = [
   },
   {
     id: 705,
-    date: "2023-11-27T18:16:13Z",
+    date: "2019-11-27T18:16:13Z",
     category: "Other",
     name: "Kuhn-Lind",
     sum: 65,
@@ -5650,7 +5650,7 @@ const mockData = [
   },
   {
     id: 707,
-    date: "2023-12-17T01:01:42Z",
+    date: "2019-12-17T01:01:42Z",
     category: "Other",
     name: "Cummerata-Cremin",
     sum: 548,
@@ -5682,7 +5682,7 @@ const mockData = [
   },
   {
     id: 711,
-    date: "2023-11-28T14:06:24Z",
+    date: "2019-11-28T14:06:24Z",
     category: "Energy",
     name: "Pagac Inc",
     sum: 409,
@@ -5706,7 +5706,7 @@ const mockData = [
   },
   {
     id: 714,
-    date: "2023-04-01T07:31:25Z",
+    date: "2019-04-01T07:31:25Z",
     category: "Energy",
     name: "Will Inc",
     sum: 763,
@@ -5778,7 +5778,7 @@ const mockData = [
   },
   {
     id: 723,
-    date: "2023-05-04T05:19:59Z",
+    date: "2019-05-04T05:19:59Z",
     category: "Food",
     name: "Marvin, Emard and Quigley",
     sum: 519,
@@ -5802,7 +5802,7 @@ const mockData = [
   },
   {
     id: 726,
-    date: "2023-08-07T15:35:14Z",
+    date: "2019-08-07T15:35:14Z",
     category: "Bills",
     name: "Grant-Muller",
     sum: 89,
@@ -5818,7 +5818,7 @@ const mockData = [
   },
   {
     id: 728,
-    date: "2023-06-02T07:27:59Z",
+    date: "2019-06-02T07:27:59Z",
     category: "Food",
     name: "Kassulke-Goyette",
     sum: 211,
@@ -5834,7 +5834,7 @@ const mockData = [
   },
   {
     id: 730,
-    date: "2023-05-07T21:49:08Z",
+    date: "2019-05-07T21:49:08Z",
     category: "Food",
     name: "Gottlieb-Lubowitz",
     sum: 148,
@@ -5850,7 +5850,7 @@ const mockData = [
   },
   {
     id: 732,
-    date: "2023-08-25T09:51:40Z",
+    date: "2019-08-25T09:51:40Z",
     category: "Groceries",
     name: "Kuhic-Kirlin",
     sum: 767,
@@ -5858,7 +5858,7 @@ const mockData = [
   },
   {
     id: 733,
-    date: "2023-01-27T16:07:14Z",
+    date: "2023-01-07T16:07:14Z",
     category: "Restaurants",
     name: "Kassulke, Maggio and Price",
     sum: 610,
@@ -5914,7 +5914,7 @@ const mockData = [
   },
   {
     id: 740,
-    date: "2023-08-21T07:58:20Z",
+    date: "2019-08-21T07:58:20Z",
     category: "Energy",
     name: "Daugherty-Parker",
     sum: 260,
@@ -5930,7 +5930,7 @@ const mockData = [
   },
   {
     id: 742,
-    date: "2023-04-30T09:36:07Z",
+    date: "2019-04-30T09:36:07Z",
     category: "Entertainment",
     name: "West-Hauck",
     sum: 316,
@@ -5946,7 +5946,7 @@ const mockData = [
   },
   {
     id: 744,
-    date: "2023-05-14T13:26:14Z",
+    date: "2019-05-14T13:26:14Z",
     category: "Energy",
     name: "Langworth-Ebert",
     sum: 232,
@@ -6002,7 +6002,7 @@ const mockData = [
   },
   {
     id: 751,
-    date: "2023-06-25T11:03:43Z",
+    date: "2019-06-25T11:03:43Z",
     category: "Food",
     name: "Beatty, Stamm and King",
     sum: 188,
@@ -6034,7 +6034,7 @@ const mockData = [
   },
   {
     id: 755,
-    date: "2023-09-29T22:46:30Z",
+    date: "2019-09-29T22:46:30Z",
     category: "Communication",
     name: "Abshire LLC",
     sum: 53,
@@ -6050,7 +6050,7 @@ const mockData = [
   },
   {
     id: 757,
-    date: "2023-06-08T10:09:29Z",
+    date: "2019-06-08T10:09:29Z",
     category: "Transportation",
     name: "Volkman, Quitzon and Dicki",
     sum: 468,
@@ -6106,7 +6106,7 @@ const mockData = [
   },
   {
     id: 764,
-    date: "2023-12-11T05:29:23Z",
+    date: "2019-12-11T05:29:23Z",
     category: "Energy",
     name: "Welch, Roob and Hyatt",
     sum: 182,
@@ -6162,7 +6162,7 @@ const mockData = [
   },
   {
     id: 771,
-    date: "2023-01-29T16:16:18Z",
+    date: "2023-01-09T16:16:18Z",
     category: "Transportation",
     name: "Kris-Gulgowski",
     sum: 761,
@@ -6250,7 +6250,7 @@ const mockData = [
   },
   {
     id: 782,
-    date: "2023-03-19T23:16:12Z",
+    date: "2019-03-19T23:16:12Z",
     category: "Bills",
     name: "D'Amore-Bergnaum",
     sum: 495,
@@ -6274,7 +6274,7 @@ const mockData = [
   },
   {
     id: 785,
-    date: "2023-06-06T14:28:12Z",
+    date: "2019-06-06T14:28:12Z",
     category: "Entertainment",
     name: "Sipes-Hartmann",
     sum: 565,
@@ -6290,7 +6290,7 @@ const mockData = [
   },
   {
     id: 787,
-    date: "2023-07-20T12:57:33Z",
+    date: "2019-07-20T12:57:33Z",
     category: "Entertainment",
     name: "Carter, Kozey and Bauch",
     sum: 155,
@@ -6474,7 +6474,7 @@ const mockData = [
   },
   {
     id: 810,
-    date: "2023-10-22T19:59:30Z",
+    date: "2019-10-22T19:59:30Z",
     category: "Food",
     name: "Harvey-Toy",
     sum: 59,
@@ -6498,7 +6498,7 @@ const mockData = [
   },
   {
     id: 813,
-    date: "2023-12-20T10:37:22Z",
+    date: "2019-12-20T10:37:22Z",
     category: "Communication",
     name: "Hoppe-Aufderhar",
     sum: 333,
@@ -6730,7 +6730,7 @@ const mockData = [
   },
   {
     id: 842,
-    date: "2023-11-25T17:59:56Z",
+    date: "2019-11-25T17:59:56Z",
     category: "Communication",
     name: "Upton-Franecki",
     sum: 183,
@@ -6746,7 +6746,7 @@ const mockData = [
   },
   {
     id: 844,
-    date: "2023-09-04T06:09:06Z",
+    date: "2019-09-04T06:09:06Z",
     category: "Food",
     name: "Lockman-Medhurst",
     sum: 218,
@@ -6762,7 +6762,7 @@ const mockData = [
   },
   {
     id: 846,
-    date: "2023-11-29T23:23:54Z",
+    date: "2019-11-29T23:23:54Z",
     category: "Energy",
     name: "Luettgen Group",
     sum: 338,
@@ -6794,7 +6794,7 @@ const mockData = [
   },
   {
     id: 850,
-    date: "2023-06-02T21:05:32Z",
+    date: "2019-06-02T21:05:32Z",
     category: "Restaurants",
     name: "Crona, Senger and Bins",
     sum: 507,
@@ -6802,7 +6802,7 @@ const mockData = [
   },
   {
     id: 851,
-    date: "2023-02-22T08:53:15Z",
+    date: "2019-02-22T08:53:15Z",
     category: "Transportation",
     name: "Wisoky-Dooley",
     sum: 527,
@@ -6810,7 +6810,7 @@ const mockData = [
   },
   {
     id: 852,
-    date: "2023-09-11T06:21:10Z",
+    date: "2019-09-11T06:21:10Z",
     category: "Restaurants",
     name: "Flatley-Bogan",
     sum: 86,
@@ -6930,7 +6930,7 @@ const mockData = [
   },
   {
     id: 867,
-    date: "2023-11-25T06:41:50Z",
+    date: "2019-11-25T06:41:50Z",
     category: "Insurence",
     name: "Schumm Group",
     sum: 695,
@@ -6938,7 +6938,7 @@ const mockData = [
   },
   {
     id: 868,
-    date: "2023-02-28T11:17:51Z",
+    date: "2019-02-28T11:17:51Z",
     category: "Food",
     name: "Lemke-Olson",
     sum: 464,
@@ -7010,7 +7010,7 @@ const mockData = [
   },
   {
     id: 877,
-    date: "2023-04-25T05:06:58Z",
+    date: "2019-04-25T05:06:58Z",
     category: "Groceries",
     name: "VonRueden, Zieme and Bauch",
     sum: 346,
@@ -7042,7 +7042,7 @@ const mockData = [
   },
   {
     id: 881,
-    date: "2023-02-21T03:30:58Z",
+    date: "2019-02-21T03:30:58Z",
     category: "Food",
     name: "Howe Inc",
     sum: 150,
@@ -7074,7 +7074,7 @@ const mockData = [
   },
   {
     id: 885,
-    date: "2023-11-15T21:52:01Z",
+    date: "2019-11-15T21:52:01Z",
     category: "Communication",
     name: "Marks, Hartmann and Davis",
     sum: 110,
@@ -7082,7 +7082,7 @@ const mockData = [
   },
   {
     id: 886,
-    date: "2023-06-01T09:15:10Z",
+    date: "2019-06-01T09:15:10Z",
     category: "Entertainment",
     name: "Koepp, Price and Mann",
     sum: 513,
@@ -7202,7 +7202,7 @@ const mockData = [
   },
   {
     id: 901,
-    date: "2023-09-02T20:53:21Z",
+    date: "2019-09-02T20:53:21Z",
     category: "Groceries",
     name: "Monahan-Schmidt",
     sum: 772,
@@ -7210,7 +7210,7 @@ const mockData = [
   },
   {
     id: 902,
-    date: "2023-02-25T10:10:08Z",
+    date: "2019-02-25T10:10:08Z",
     category: "Transportation",
     name: "Keeling, Runte and Buckridge",
     sum: 698,
@@ -7242,7 +7242,7 @@ const mockData = [
   },
   {
     id: 906,
-    date: "2023-12-13T08:45:17Z",
+    date: "2019-12-13T08:45:17Z",
     category: "Food",
     name: "Murazik Inc",
     sum: 594,
@@ -7298,7 +7298,7 @@ const mockData = [
   },
   {
     id: 913,
-    date: "2023-12-26T18:05:14Z",
+    date: "2019-12-26T18:05:14Z",
     category: "Energy",
     name: "Gleichner-Russel",
     sum: 495,
@@ -7314,7 +7314,7 @@ const mockData = [
   },
   {
     id: 915,
-    date: "2023-05-30T08:35:12Z",
+    date: "2019-05-30T08:35:12Z",
     category: "Energy",
     name: "Lehner-Douglas",
     sum: 251,
@@ -7362,7 +7362,7 @@ const mockData = [
   },
   {
     id: 921,
-    date: "2023-03-10T07:57:11Z",
+    date: "2019-03-10T07:57:11Z",
     category: "Home",
     name: "Champlin LLC",
     sum: 123,
@@ -7418,7 +7418,7 @@ const mockData = [
   },
   {
     id: 928,
-    date: "2023-12-16T23:17:35Z",
+    date: "2019-12-16T23:17:35Z",
     category: "Transportation",
     name: "Swift, Dibbert and Gutkowski",
     sum: 420,
@@ -7458,7 +7458,7 @@ const mockData = [
   },
   {
     id: 933,
-    date: "2023-10-17T04:39:13Z",
+    date: "2019-10-17T04:39:13Z",
     category: "Food",
     name: "Quigley-Will",
     sum: 158,
@@ -7498,7 +7498,7 @@ const mockData = [
   },
   {
     id: 938,
-    date: "2023-03-05T07:39:05Z",
+    date: "2019-03-05T07:39:05Z",
     category: "Restaurants",
     name: "Smith Inc",
     sum: 308,
@@ -7506,7 +7506,7 @@ const mockData = [
   },
   {
     id: 939,
-    date: "2023-07-04T00:58:43Z",
+    date: "2019-07-04T00:58:43Z",
     category: "Restaurants",
     name: "Erdman LLC",
     sum: 574,
@@ -7514,7 +7514,7 @@ const mockData = [
   },
   {
     id: 940,
-    date: "2023-03-04T05:20:32Z",
+    date: "2019-03-04T05:20:32Z",
     category: "Other",
     name: "Anderson, Hagenes and Ratke",
     sum: 309,
@@ -7610,7 +7610,7 @@ const mockData = [
   },
   {
     id: 952,
-    date: "2023-01-21T13:06:14Z",
+    date: "2023-01-01T13:06:14Z",
     category: "Food",
     name: "Dietrich, Stoltenberg and Schowalter",
     sum: 679,
@@ -7642,7 +7642,7 @@ const mockData = [
   },
   {
     id: 956,
-    date: "2023-06-23T15:24:01Z",
+    date: "2019-06-23T15:24:01Z",
     category: "Groceries",
     name: "Runolfsson and Sons",
     sum: 648,
@@ -7690,7 +7690,7 @@ const mockData = [
   },
   {
     id: 962,
-    date: "2023-10-18T23:04:25Z",
+    date: "2019-10-18T23:04:25Z",
     category: "Communication",
     name: "Altenwerth LLC",
     sum: 579,
@@ -7738,7 +7738,7 @@ const mockData = [
   },
   {
     id: 968,
-    date: "2023-05-29T02:16:49Z",
+    date: "2019-05-29T02:16:49Z",
     category: "Groceries",
     name: "Konopelski-Wilkinson",
     sum: 601,
@@ -7802,7 +7802,7 @@ const mockData = [
   },
   {
     id: 976,
-    date: "2023-05-01T21:29:46Z",
+    date: "2019-05-01T21:29:46Z",
     category: "Restaurants",
     name: "Marks and Sons",
     sum: 478,
@@ -7850,7 +7850,7 @@ const mockData = [
   },
   {
     id: 982,
-    date: "2023-11-02T01:37:41Z",
+    date: "2019-11-02T01:37:41Z",
     category: "Entertainment",
     name: "Schoen-Feeney",
     sum: 736,
@@ -7858,7 +7858,7 @@ const mockData = [
   },
   {
     id: 983,
-    date: "2023-05-29T14:39:12Z",
+    date: "2019-05-29T14:39:12Z",
     category: "Insurence",
     name: "VonRueden-Stamm",
     sum: 446,
@@ -7874,7 +7874,7 @@ const mockData = [
   },
   {
     id: 985,
-    date: "2023-10-17T15:41:02Z",
+    date: "2019-10-17T15:41:02Z",
     category: "Bills",
     name: "Orn-Sipes",
     sum: 248,
@@ -7882,7 +7882,7 @@ const mockData = [
   },
   {
     id: 986,
-    date: "2023-09-14T17:29:11Z",
+    date: "2019-09-14T17:29:11Z",
     category: "Groceries",
     name: "Spencer-Fadel",
     sum: 554,
@@ -7898,7 +7898,7 @@ const mockData = [
   },
   {
     id: 988,
-    date: "2023-04-27T12:01:52Z",
+    date: "2019-04-27T12:01:52Z",
     category: "Communication",
     name: "Stehr-Nienow",
     sum: 538,
@@ -7994,7 +7994,7 @@ const mockData = [
   },
   {
     id: 1000,
-    date: "2023-01-23T11:01:44Z",
+    date: "2023-01-03T11:01:44Z",
     category: "Food",
     name: "Nicolas, Hayes and Wilderman",
     sum: 514,
