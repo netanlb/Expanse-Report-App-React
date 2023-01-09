@@ -5,7 +5,7 @@
 \*********************************************************/
 
 const { mockData } = require("./mockData");
-const months = [
+export const months = [
   "January",
   "February",
   "March",
@@ -35,7 +35,7 @@ function getAllExpenses() {
   return temp;
 }
 
-function getFilterOptions() {
+export function getFilterOptions() {
   let temp = getAllExpenses();
   //Get distinct years
   let years = [
@@ -59,7 +59,7 @@ function getFilterOptions() {
   let maxSum = Math.max(...temp.map((item) => item.sum));
   return { years, months, categories, minSum, maxSum };
 }
-function addExpense(expenseObject) {
+export function addExpense(expenseObject) {
   let temp = getAllExpenses();
   expenseObject.id = new Date().getTime();
   temp.push(expenseObject);
@@ -67,21 +67,21 @@ function addExpense(expenseObject) {
   return expenseObject;
 }
 
-function _deleteExpense(id) {
+export function _deleteExpense(id) {
   let temp = getAllExpenses();
   temp = temp.filter((item) => item.id !== id);
   localStorage.setItem("expenses", JSON.stringify(temp));
 }
 
-function saveFilterSelections(filters) {
+export function saveFilterSelections(filters) {
   localStorage.setItem("filters", JSON.stringify(filters));
 }
 
-function getLastSelectedFilters() {
+export function getLastSelectedFilters() {
   return JSON.parse(localStorage.getItem("filters"));
 }
 
-function getExpenses(filterObject) {
+export function getExpenses(filterObject) {
   saveFilterSelections(filterObject);
 
   let temp = getAllExpenses();
@@ -118,11 +118,3 @@ function getExpenses(filterObject) {
   return temp;
 }
 
-module.exports = {
-  months,
-  getExpenses,
-  addExpense,
-  _deleteExpense,
-  getFilterOptions,
-  getLastSelectedFilters,
-};
