@@ -16,7 +16,7 @@ export const StyledBox = styled(Box)(() => ({
 export const customScroll = {
   overflowY: "auto",
   overflowX: "hidden",
-  maxHeight: "calc(100vh - 149.23px)",
+  height: "calc(100vh - 149.23px)",
   "&::-webkit-scrollbar": {
     width: "0.4em",
   },
