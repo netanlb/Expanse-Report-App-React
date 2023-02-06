@@ -8,6 +8,7 @@ import { Typography, Container } from "@mui/material";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import React from "react";
+import { createNotification } from "../../notificationService/notifications";
 
 export default function ExpensesComponent() {
   const [currentFilters, setCurrentFilters] = useState();
@@ -41,13 +42,30 @@ export default function ExpensesComponent() {
     );
   }, []);
   useEffect(() => {
-    currentFilters && setExpenseList(getExpenses(currentFilters));
+    if(currentFilters){
+      getExpenses(currentFilters).then((res) => {
+        setExpenseList(res);
+      }
+      ).catch((err) => {
+        createNotification("error", "Error getting expenses from server!");
+        console.log(err);
+      }
+      );
+    }
   }, [currentFilters]);
 
   const deleteExpense = (id) => {
-    setExpenseList(expenseList.filter((expense) => expense.id !== id));
-    _deleteExpense(chosenExpense.id);
-    setChosenExpense();
+    return new Promise((resolve, reject) => {
+      _deleteExpense(chosenExpense.id)
+        .then((res) => {
+          setExpenseList(expenseList.filter((expense) => expense.id !== id));
+          setChosenExpense();
+          resolve();
+        })
+        .catch((err) => {
+          reject();
+        });
+    });
   };
 
   return (

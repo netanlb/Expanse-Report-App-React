@@ -17,7 +17,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import { useState, useEffect } from "react";
-
+import { createNotification } from "../../../../notificationService/notifications";
 import {
   getFilterOptions,
   getLastSelectedFilters,
@@ -43,25 +43,51 @@ export default function ExpenseToolbarComponent({
   handleApply,
   setChosenExpense,
 }) {
-  const defaultFilters = getLastSelectedFilters() ?? {
+  const defaultFilters = {
     year: new Date().getFullYear(),
     month: months[new Date().getMonth()],
   };
-
   const [filterSelections, setFilterSelections] = useState(defaultFilters);
 
+  useEffect(() => {
+    getLastSelectedFilters().then((res) => {
+      setFilterSelections(res);
+    }).catch((err) => {
+      createNotification("error", "Error fetching last selected filters from server!");
+      console.log(err);
+    })
+  }, []);
   useEffect(() => {
     // apply happens when ever state for filterSelections changes
     handleApply(filterSelections);
   }, [filterSelections, handleApply]);
 
   const [open, setOpen] = useState(false);
+  
+  const [dropdowns, setDropdowns] = useState({year: [], month: [], category: []});
 
-  const dropdowns = {
-    year: getFilterOptions().years,
-    month: getFilterOptions().months,
-    category: getFilterOptions().categories,
+  const isValueExistInArray = (value, array) => {
+    return array.some((item) => item === value);
   };
+  // const dropdowns = {
+  //   year: getFilterOptions().years,
+  //   month: getFilterOptions().months,
+  //   category: getFilterOptions().categories,
+  // };
+  useEffect(() => {
+    getFilterOptions().then((res) => {
+      setDropdowns({
+        year: res.years,
+        month: res.months,
+        category: res.categories,
+      });
+    }).catch((err) => {
+      createNotification("error", "Error fetching filter options from server!");
+      console.log(err);
+    })
+  }, []);
+
+
 
   const handleChange = (value, key) => {
     setFilterSelections({ ...filterSelections, [key]: value });
@@ -96,7 +122,7 @@ export default function ExpenseToolbarComponent({
               {!filterSelections[key] && capitalizeFirstLetter(key)}
             </InputLabel>
             <Select
-              value={filterSelections[key] ?? ""}
+              value={isValueExistInArray(filterSelections[key], values) ? filterSelections[key] : ""}
               onChange={(e) => handleChange(e.target.value, key)}
             >
               <MenuItem key="none" value="">

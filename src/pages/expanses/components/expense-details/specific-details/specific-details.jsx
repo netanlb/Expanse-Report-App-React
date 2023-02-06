@@ -20,14 +20,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import React from "react";
-
-const openSnakeBar = (type, message) => {
-  document.dispatchEvent(
-    new CustomEvent("openSnakeBar", {
-      detail: { type: type, message: message },
-    })
-  );
-};
+import { createNotification } from "../../../../../notificationService/notifications";
 export default function SpecificExpenseDetails({
   chosenExpense,
   setChosenExpense,
@@ -136,8 +129,12 @@ export default function SpecificExpenseDetails({
               <Button
                 onClick={() => {
                   handleClose();
-                  deleteExpense(chosenExpense.id);
-                  openSnakeBar("success", "Expense deleted successfully!");
+                  deleteExpense(chosenExpense.id).then(() => {
+                    handleClose();
+                    createNotification("success", "Expense deleted successfully!")
+                  }).catch((err) => {
+                    createNotification("error", "Error deleting expense! Please try again later.")
+                  });
                 }}
                 autoFocus
                 variant="contained"

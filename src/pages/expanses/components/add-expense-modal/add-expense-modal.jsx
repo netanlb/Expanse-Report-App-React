@@ -7,7 +7,7 @@ import {
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import DescriptionIcon from "@mui/icons-material/Description";
 import Alert from "@mui/material/Alert";
-
+import { createNotification } from "../../../../notificationService/notifications";
 import {
   Backdrop,
   Modal,
@@ -35,11 +35,13 @@ import {
 } from "../../../../backendService/backend";
 
 import { useState } from "react";
+import { useEffect } from "react";
 export default function AddExpenseModalComponent({
   open,
   setOpen,
   setFilterSelections,
   setChosenExpense,
+  
 }) {
   const [dateValue, setDateValue] = useState(dayjs(new Date()));
   const [name, setName] = useState("");
@@ -47,10 +49,17 @@ export default function AddExpenseModalComponent({
   const [description, setDescription] = useState("");
   const [sum, setSum] = useState("");
   const [alertUser, setAlertUser] = useState(false);
-  
-  const openSnakeBar = (type, message) => {
-    document.dispatchEvent(new CustomEvent('openSnakeBar', { detail: {type: type, message: message}}));
-  }
+  const [categoriesToDisplay, setCategoriesToDisplay] = useState([]);
+
+  useEffect(() => {
+    getFilterOptions().then((res) => {
+      setCategoriesToDisplay(res.categories);
+    }).catch((err) => {
+      createNotification('error', 'Error getting categories from server!')
+      console.log(err)
+    });
+  }, []);
+
 
   const checkValidation = () => {
     return !!dateValue && !!name && !!category && !!sum;
@@ -74,10 +83,14 @@ export default function AddExpenseModalComponent({
       year: new Date(expenseObject.date).getFullYear(),
       month: months[new Date(expenseObject.date).getMonth()],
     });
-    const newExpense = addExpense(expenseObject); // setting in local storage and returns expense id
-    setChosenExpense(newExpense);
-    closeModal();
-    openSnakeBar('success', 'Expense added successfully!');
+    addExpense(expenseObject).then((res) => {
+      setChosenExpense(res);
+      closeModal();
+      createNotification('success', 'Expense added successfully!');
+    }).catch((err) => {
+      createNotification('error', 'Error adding expense to server!')
+      console.log(err)
+    });
 
   };
 
@@ -179,7 +192,7 @@ export default function AddExpenseModalComponent({
             }}
             color="secondary"
           >
-            {getFilterOptions().categories.map((option) => (
+            {categoriesToDisplay.map((option) => (
               <MenuItem key={option} value={option}>
                 {icons[option]}
                 <span sx={{ fontSize: "16px" }}>{option}</span>
