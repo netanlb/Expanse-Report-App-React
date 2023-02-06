@@ -44,6 +44,12 @@ function returnAsync(data, success = randChangeOfSuccess()) {
 if (!localStorage.getItem("expenses")) {
   localStorage.setItem("expenses", JSON.stringify(mockData));
 }
+if(!localStorage.getItem("filters")) {
+  localStorage.setItem("filters", JSON.stringify({
+    year: new Date().getFullYear(),
+    month: months[new Date().getMonth()]
+  }));
+}
 
 function orderByDate(a, b) {
   return new Date(b.date) - new Date(a.date);
