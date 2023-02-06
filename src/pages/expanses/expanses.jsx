@@ -84,6 +84,9 @@ export default function ExpensesComponent() {
           borderColor: sbBorderColor,
           borderRadius: "10px",
           overflow: "hidden",
+          position: "fixed",
+          left: "50% !important",
+          transform: "translateX(-50%)",
         }}
         open={openSB}
         autoHideDuration={4000}
