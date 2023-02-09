@@ -69,11 +69,6 @@ export default function ExpenseToolbarComponent({
   const isValueExistInArray = (value, array) => {
     return array.some((item) => item === value);
   };
-  // const dropdowns = {
-  //   year: getFilterOptions().years,
-  //   month: getFilterOptions().months,
-  //   category: getFilterOptions().categories,
-  // };
   useEffect(() => {
     getFilterOptions().then((res) => {
       setDropdowns({
